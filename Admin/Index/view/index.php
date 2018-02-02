@@ -114,7 +114,7 @@
 </section>
 
 <!--_footer 作为公共模版分离出去-->
-<?php include(LAY.'/_footer.html');?>
+<?php include(LAY.'/_foot.html');?>
 <!--/_footer /作为公共模版分离出去-->
 </body>
 </html>

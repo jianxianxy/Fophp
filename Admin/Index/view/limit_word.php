@@ -23,7 +23,7 @@
 	<div class="Hui-article">
 		<div class="pd-20">
 			<div>
-				<textarea class="textarea" style="width:100%; height:300px; resize:none">她妈|它妈|他妈|你妈|去死|贱人|1090tv|10jil|21世纪中国基金会|ustibet|voa</textarea>
+				<textarea class="textarea" style="width:100%; height:300px; resize:none">贱人|1090tv|10jil|21世纪中国基金会|ustibet|voa</textarea>
 			</div>
 			<div class="mt-20 text-c">
 				<button name="system-base-save" id="system-base-save" class="btn btn-success radius" type="submit"><i class="icon-ok"></i> 确定</button>
@@ -32,7 +32,7 @@
 	</div>
 </section>
 <!--_footer 作为公共模版分离出去-->
-<?php include(LAY.'/_footer.html');?>
+<?php include(LAY.'/_foot.html');?>
 <!--/_footer /作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
