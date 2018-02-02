@@ -20,11 +20,11 @@
 		管理员列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
 	<div class="Hui-article">
 		<article class="cl pd-20">
-			<div class="text-c"> 日期范围：
+			<div> 日期范围：
 				<input type="text" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}'})" id="datemin" class="input-text Wdate" style="width:120px;">
 				-
 				<input type="text" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d'})" id="datemax" class="input-text Wdate" style="width:120px;">
-				<input type="text" class="input-text" style="width:250px" placeholder="输入管理员名称" id="" name="">
+				<input type="text" class="input-text" style="width:120px" placeholder="输入管理员名称" id="Mname">
 				<button type="submit" class="btn btn-success" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
 			</div>
 			<div class="cl pd-5 bg-1 bk-gray mt-20">
@@ -85,9 +85,9 @@
 <!--/_footer /作为公共模版分离出去--> 
 
 <!--请在下方写此页面业务相关的脚本--> 
-<script type="text/javascript" src="lib/My97DatePicker/4.8/WdatePicker.js"></script> 
-<script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
-<script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script> 
+<script type="text/javascript" src="/lib/My97DatePicker/4.8/WdatePicker.js"></script> 
+<script type="text/javascript" src="/lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
+<script type="text/javascript" src="/lib/laypage/1.2/laypage.js"></script> 
 <script type="text/javascript">
 /*
 	参数解释：
