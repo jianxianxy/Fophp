@@ -32,6 +32,10 @@ class Fophp
         if($route['type'] == 1)
         {
             $URI = trim($_SERVER['REQUEST_URI'],'/');
+            $pos = strpos($URI,'?');
+            if($pos){
+                $URI = substr($URI,0,$pos);
+            }
             $URI = preg_replace('/\w+\.php/','',$URI);
             $URI = explode('/', $URI);
             $config = Config::getConfig();
