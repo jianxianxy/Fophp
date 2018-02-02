@@ -16,7 +16,7 @@ class Fophp
             include($file);//加载控制器
             //补全后缀
             $controller = CONTROLLER;
-            $action = ACTION;
+            $action = ACTION.'Action';
             $object = new $controller();
             $object->$action();
         }

@@ -2,6 +2,8 @@
 //统一入口
 header("Content-type:text/html;charset=utf-8");
 //定义常量
+define('Host','http://fo.com');
+define('PROD','Admin');
 define('APP_PATH',str_replace('\\','/',dirname(__FILE__)));
 define('M',APP_PATH.'/Admin');
 define('LIB','/lib');

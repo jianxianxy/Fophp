@@ -1,6 +1,7 @@
 <?php
-
-//开启SESSION
+/**
+ * 框架自动加载控制器
+ */
 session_start();
 //PSR0规范 加载框架文件 
 function autoload($className)

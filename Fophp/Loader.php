@@ -1,6 +1,9 @@
 <?php
+/*
+ * 加载 modle 和 service 类
+ */
 namespace Fophp;
-//加载 modle 和 service 类
+
 class Loader
 {
 	/**
