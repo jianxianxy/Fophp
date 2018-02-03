@@ -40,6 +40,7 @@
 			</div>
 			<div class="cl pd-5 bg-1 bk-gray mt-20">
 				<span class="l">
+                <a href="javascript:;"  id="upImg" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 上传图片</a>
 				<a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
 				<a class="btn btn-primary radius" data-title="添加资讯" _href="article-add.html" onclick="article_add('添加资讯','/Cms/Article/Add')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加资讯</a>
 				</span>
@@ -80,6 +81,32 @@ layui.use('table', function(){
       {field:'manage', title:'操作'},
     ]]
   });
+});
+
+layui.use('upload', function(){
+    var upload = layui.upload;
+    upload.render({
+      elem: '#upImg',
+      field: 'upfile',
+      url: '/lib/ueditor/1.4.3/php/controller.php?action=uploadimage',
+      size: 300, //限制文件大小，单位 KB
+      accept: 'file',
+      exts: "jpg|png|gif|bmp|jpeg|pdf",
+      before: function(obj){
+        //预读本地文件示例，不支持ie8
+
+      },
+      done: function(res){
+        //如果上传失败
+        if(res.code > 0){
+          return layer.msg('上传失败');
+        }
+        //上传成功
+      },
+      error: function(){
+        return layer.msg('上传失败');
+      }
+    });
 });
 /*资讯-添加*/
 function article_add(title,url,w,h){
