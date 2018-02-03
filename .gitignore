@@ -1,0 +1,7 @@
+static/upload/
+*.log
+.idea/
+.tags
+.tags_sorted_by_file
+.cscode
+.vscode
