@@ -34,10 +34,14 @@
 			</div>
 		</div>
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">排序值：</label>
+			<label class="form-label col-xs-4 col-sm-2">产品规格：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="">
-			</div>
+				<input type="text" name="" id="" placeholder="输入长度" value="" class="input-text" style=" width:25%">
+				MM
+				<input type="text" name="" id="" placeholder="输入宽度" value="" class="input-text" style=" width:25%">
+				MM
+				<input type="text" name="" id="" placeholder="输入高度" value="" class="input-text" style=" width:25%">
+				MM </div>
 		</div>
         
         <div class="row cl">
@@ -64,8 +68,6 @@
 		</div>
 	</form>
 </div>
-</div>
-
 <!--_footer 作为公共模版分离出去-->
 <?php include(LAY.'/_foot.html');?>
 <!--/_footer /作为公共模版分离出去-->

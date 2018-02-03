@@ -14,4 +14,7 @@ class Article extends ControllerAbstract{
     function AddAction(){
         $this->display('aadd.php');
     }
+    function FeedbackAction(){
+        $this->display('feedback.php');
+    }
 }

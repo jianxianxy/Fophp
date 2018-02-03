@@ -125,3 +125,9 @@ h4{line-height:30px}
 .portfolio-area li .textbox{ display: none; margin-top: 5px;}
 .portfolio-area li.hover .textbox{ display: block;}
 .portfolio-area li label{ display:block; cursor:pointer}
+.upload_btn{font-size: 14px;background: #3bb4f2 none repeat scroll 0 0;border-radius: 3px;color: #fff;cursor: pointer;display: inline-block;overflow: hidden;padding: 4px 12px;position: relative;text-align: center;}
+.fileItem {border: thin solid #dddddd;border-radius: 5px;display: inline-block;height: 180px;margin: 10px;text-align: center;vertical-align: top;width: 150px;}
+.fileItem .imgShow {height: 140px;margin: 5px auto;text-align: center;width: 140px;}
+.fileItem .status {font-size: 15px;text-align: center;}
+.fileItem .imgShow img {height: 100%;width: 100%;}
+.fileItem .fileName {clear: both;overflow: hidden;padding: 2px;text-overflow: ellipsis;white-space: nowrap;}

@@ -1,8 +1,8 @@
 <?php
 /*
- * 图片
+ * 商品
  */
-class Picture extends ControllerAbstract{
+class Product extends ControllerAbstract{
     public function __construct() {
         parent::__construct();
     }
@@ -13,9 +13,5 @@ class Picture extends ControllerAbstract{
     //添加
     function AddAction(){
         $this->display('padd.php');
-    }
-    //详情
-    function ShowAction(){
-        $this->display('pshow.php');
     }
 }
