@@ -2,6 +2,7 @@
 <html>
 <head>
 <?php include(LAY.'/_head.html');?>
+<link rel="stylesheet" href="/lib/layui/dist/css/layui.css">
 </head>
 <body>
 <!--_header 作为公共模版分离出去-->
@@ -42,52 +43,9 @@
 				<a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
 				<a class="btn btn-primary radius" data-title="添加资讯" _href="article-add.html" onclick="article_add('添加资讯','/Cms/Article/Add')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加资讯</a>
 				</span>
-				<span class="r">共有数据：<strong>54</strong> 条</span>
 			</div>
 			<div class="mt-20">
-				<table class="table table-border table-bordered table-bg table-hover table-sort">
-					<thead>
-						<tr class="text-c">
-							<th width="25"><input type="checkbox" name="" value=""></th>
-							<th width="80">ID</th>
-							<th>标题</th>
-							<th width="80">分类</th>
-							<th width="80">来源</th>
-							<th width="120">更新时间</th>
-							<th width="75">浏览次数</th>
-							<th width="60">发布状态</th>
-							<th width="120">操作</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr class="text-c">
-							<td><input type="checkbox" value="" name=""></td>
-							<td>10001</td>
-							<td class="text-l"><u style="cursor:pointer" class="text-primary" onClick="article_edit('查看','article-zhang.html','10001')" title="查看">资讯标题</u></td>
-							<td>行业动态</td>
-							<td>H-ui</td>
-							<td>2014-6-11 11:11:42</td>
-							<td>21212</td>
-							<td class="td-status"><span class="label label-success radius">已发布</span></td>
-							<td class="f-14 td-manage"><a style="text-decoration:none" onClick="article_stop(this,'10001')" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>
-								<a style="text-decoration:none" class="ml-5" onClick="article_edit('资讯编辑','article-add.html','10001')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a>
-								<a style="text-decoration:none" class="ml-5" onClick="article_del(this,'10001')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-						</tr>
-						<tr class="text-c">
-							<td><input type="checkbox" value="" name=""></td>
-							<td>10002</td>
-							<td class="text-l"><u style="cursor:pointer" class="text-primary" onClick="article_edit('查看','article-zhang.html','10002')" title="查看">资讯标题</u></td>
-							<td>行业动态</td>
-							<td>H-ui</td>
-							<td>2014-6-11 11:11:42</td>
-							<td>21212</td>
-							<td class="td-status"><span class="label label-success radius">草稿</span></td>
-							<td class="f-14 td-manage"><a style="text-decoration:none" onClick="article_shenhe(this,'10001')" href="javascript:;" title="审核">审核</a>
-								<a style="text-decoration:none" class="ml-5" onClick="article_edit('资讯编辑','article-add.html','10001')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a>
-								<a style="text-decoration:none" class="ml-5" onClick="article_del(this,'10001')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-						</tr>
-					</tbody>
-				</table>
+                <table id="lay_table" lay-filter="lay_table"></table>
 			</div>
 		</article>
 	</div>
@@ -99,18 +57,31 @@
 
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript" src="/lib/My97DatePicker/4.8/WdatePicker.js"></script>
-<script type="text/javascript" src="/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="/lib/layui/dist/layui.js"></script>
 <script type="text/javascript">
-$('.table-sort').dataTable({
-	"aaSorting": [[ 1, "desc" ]],//默认第几个排序
-	"bStateSave": true,//状态保存
-	"aoColumnDefs": [
-		//{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
-		{"orderable":false,"aTargets":[0,8]}// 不参与排序的列
-	]
+layui.use('table', function(){
+  var table = layui.table;
+  
+  table.render({
+    elem: '#lay_table'
+    ,url: '/Cms/Article/List'
+    ,page: { //详细参数可参考 laypage 组件文档
+      curr: 1
+      ,layout: ['limit', 'prev', 'page', 'next', 'count','skip'] //自定义分页布局
+    }
+    ,cellMinWidth: 80
+    ,cols: [[
+      {type: 'checkbox'},
+      {field:'id', title:'ID', unresize: true, sort: true},
+      {field:'title', title:'标题'},
+      {field:'category', title:'分类'},
+      {field:'form', title:'来源'},
+      {field:'create_time', title:'创建时间'},
+      {field:'status', title:'状态'},
+      {field:'manage', title:'操作'},
+    ]]
+  });
 });
-
 /*资讯-添加*/
 function article_add(title,url,w,h){
 	var index = layer.open({
