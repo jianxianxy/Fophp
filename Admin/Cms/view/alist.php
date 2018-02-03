@@ -61,7 +61,6 @@
 <script type="text/javascript">
 layui.use('table', function(){
   var table = layui.table;
-  
   table.render({
     elem: '#lay_table'
     ,url: '/Cms/Article/List'
