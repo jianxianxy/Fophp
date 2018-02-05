@@ -3,7 +3,7 @@
  * 菜单
  */
 
-class Menu extends \Fophp\Db\Table{
+class Menu extends ModelAbstract{
     //初始化
     function __construct() {
         $db_config = Config::getDbGman();
@@ -22,4 +22,5 @@ class Menu extends \Fophp\Db\Table{
         }
         return $menu;
     }
+    
 }

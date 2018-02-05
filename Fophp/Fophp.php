@@ -12,7 +12,6 @@ class Fophp
         $file = M.'/'.MODULE.'/controllers/'.CONTROLLER.'.php';
         if(file_exists($file))
         {
-            include(APP_PATH.'/Fophp/bootstrap.php');//自动加载控制器所需文件
             include($file);//加载控制器
             //补全后缀
             $controller = CONTROLLER;

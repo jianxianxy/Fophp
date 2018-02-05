@@ -1,6 +1,7 @@
 <?php
-namespace Fophp\Db;
-
+/*
+ * mysqli 连接数据库
+ */
 class Table
 {
 	protected $_db;
@@ -40,11 +41,20 @@ class Table
 	{
 		return mysqli_query($this->_db,$sql);
 	}
-	
+    /*
+     * 计算条数
+     */
+    public function count($conditions){
+        $conditionSql = $this->_getCondition($conditions);
+		$sql = "SELECT count(*) AS num FROM {$this->_tableName} {$conditionSql}";
+		$query = $this->query($sql);
+        $result = $this->fetchRow($query);
+        return $result['num'];
+    }
 	/**
 	 * 查询数据
 	 * 
-	 * @param int|string|array	$conditions		查询条件
+	 * @param int|string|array	$conditions		查询条件 array('pid:eq' => $pid)
 	 * @param int|string|array	$fields			查询字段
 	 * @param string		$fetchMode			获取模式
 	 * return array

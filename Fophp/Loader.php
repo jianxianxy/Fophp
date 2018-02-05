@@ -2,7 +2,6 @@
 /*
  * 加载 modle 和 service 类
  */
-namespace Fophp;
 
 class Loader
 {

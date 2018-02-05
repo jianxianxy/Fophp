@@ -4,7 +4,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-class ControllerAbstract extends \Fophp\Controller{
+class ControllerAbstract extends Controller{
     function __construct() {
         
     }

@@ -8,15 +8,27 @@ class System extends ControllerAbstract{
     }
     //菜单
     public function MenuAction(){
+        if(isset($_GET['page'])){
+            $page = getInt('page');
+            $limit = getInt('limit');
+            $data = M('Index','Menu')->ajaxPage($page,$limit);
+            echo json_encode($data);
+            exit;
+        }else{
+            $this->display('menu.php');
+        }
+    }
+    public function MakeMenu(){
         $model = M('Index','Menu');
         $menu = $model->getMenu();
         $this->assign('menu', $menu);
         ob_start();
-        $this->display('menu.php');
+        $this->display('_menu.php');
         $html = ob_get_contents();
         ob_end_clean();
         $file = M.'/layout/_menu.html';
-        file_put_contents($file, $html);
+        $r = file_put_contents($file, $html);
+        echo $r;
     }
     //屏蔽词
     function LimitWordAction(){

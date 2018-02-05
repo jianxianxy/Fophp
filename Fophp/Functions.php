@@ -73,7 +73,7 @@ function addslashes_loop($arr)
 //调用模型
 function M($module,$model)
 {
-    return \Fophp\Loader::model($module,$model);
+    return Loader::model($module,$model);
 }
 //获取IP
 function getip()
@@ -81,4 +81,7 @@ function getip()
     $user_IP = ($_SERVER["HTTP_VIA"]) ? $_SERVER["HTTP_X_FORWARDED_FOR"] : $_SERVER["REMOTE_ADDR"]; 
     $IP = ($user_IP) ? $user_IP : $_SERVER["REMOTE_ADDR"];
     return $IP;
+}
+function getInt($name,$def = 0){
+    return isset($_REQUEST[$name]) ? intval($_REQUEST[$name]) : $def; 
 }

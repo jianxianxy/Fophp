@@ -1,6 +1,7 @@
 <?php
-namespace Fophp;
-
+/*
+ * 控制器基础类
+ */
 class Controller
 {
     //获取请求信息
@@ -20,4 +21,3 @@ class Controller
         include($file);
     }
 }
-

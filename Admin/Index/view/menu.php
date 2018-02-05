@@ -1,21 +1,195 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<?php include(LAY.'/_head.html');?>
+<link rel="stylesheet" href="/lib/layui/dist/css/layui.css">
+</head>
+<body>
+<!--_header 作为公共模版分离出去-->
+<?php include(LAY.'/_top.html');?>
+<!--/_header 作为公共模版分离出去-->
+
 <!--_menu 作为公共模版分离出去-->
-<aside class="Hui-aside">
-    <div class="menu_dropdown bk_2">
-        <?php foreach($this->menu AS $val):?>
-        <dl>
-            <dt><i class="Hui-iconfont"><?php echo $val['icon'];?></i> <?php echo $val['name'];?><i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-            <dd>
-                <ul>
-                    <?php foreach($val['child'] AS $v):?>
-                    <li><a href="<?php echo $v['link'];?>" title="<?php echo $v['name'];?>"><?php echo $v['name'];?></a></li>
-                    <?php endforeach;?>
-                </ul>
-            </dd>
-        </dl>
-        <?php endforeach;?>
-    </div>
-</aside>
-<div class="dislpayArrow hidden-xs">
-    <a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a>
-</div>
+<?php include(LAY.'/_menu.html');?>
 <!--/_menu 作为公共模版分离出去-->
+
+<section class="Hui-article-box">
+	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页
+		<span class="c-gray en">&gt;</span>
+		资讯管理
+		<span class="c-gray en">&gt;</span>
+		资讯列表
+		<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="Hui-article">
+		<article class="cl pd-20">
+			<div>
+				<span class="select-box inline">
+				<select name="" class="select">
+					<option value="0">全部分类</option>
+					<option value="1">分类一</option>
+					<option value="2">分类二</option>
+				</select>
+				</span>
+				日期范围：
+				<input type="text" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}'})" id="logmin" class="input-text Wdate" style="width:120px;">
+				-
+				<input type="text" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d'})" id="logmax" class="input-text Wdate" style="width:120px;">
+				<input type="text" name="" id="" placeholder=" 资讯名称" style="width:250px" class="input-text">
+				<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜资讯</button>
+			</div>
+			<div class="cl pd-5 bg-1 bk-gray mt-20">
+				<span class="l">
+                <a href="javascript:;"  id="upImg" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 上传图片</a>
+				<a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
+				<a class="btn btn-primary radius" data-title="添加资讯" _href="article-add.html" onclick="article_add('添加资讯','/Cms/Article/Add')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加资讯</a>
+				</span>
+			</div>
+			<div class="mt-20">
+                <table id="lay_table" lay-filter="lay_table"></table>
+			</div>
+		</article>
+	</div>
+</section>
+
+<!--_footer 作为公共模版分离出去-->
+<?php include(LAY.'/_foot.html');?>
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="/lib/layui/dist/layui.js"></script>
+<script type="text/javascript">
+layui.use('table', function(){
+  var table = layui.table;
+  table.render({
+    elem: '#lay_table'
+    ,url: '/Index/System/Menu'
+    ,page: { //详细参数可参考 laypage 组件文档
+      curr: 1
+      ,layout: ['limit', 'prev', 'page', 'next', 'count','skip'] //自定义分页布局
+    }
+    ,cellMinWidth: 80
+    ,cols: [[
+      {type: 'checkbox'},
+      {field:'id', title:'ID', unresize: true, sort: true},
+      {field:'name', title:'名称'},
+      {field:'pid', title:'上级ID'},
+      {field:'sort', title:'排序'},
+      {field:'link', title:'连接'},
+      {field:'status', title:'状态'},
+      {field:'manage', title:'操作'},
+    ]]
+  });
+});
+
+layui.use('upload', function(){
+    var upload = layui.upload;
+    upload.render({
+      elem: '#upImg',
+      field: 'upfile',
+      url: '/lib/ueditor/1.4.3/php/controller.php?action=uploadimage',
+      size: 300, //限制文件大小，单位 KB
+      accept: 'file',
+      exts: "jpg|png|gif|bmp|jpeg|pdf",
+      before: function(obj){
+        //预读本地文件示例，不支持ie8
+
+      },
+      done: function(res){
+        //如果上传失败
+        if(res.code > 0){
+          return layer.msg('上传失败');
+        }
+        //上传成功
+      },
+      error: function(){
+        return layer.msg('上传失败');
+      }
+    });
+});
+/*资讯-添加*/
+function article_add(title,url,w,h){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+/*资讯-编辑*/
+function article_edit(title,url,id,w,h){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+/*资讯-删除*/
+function article_del(obj,id){
+	layer.confirm('确认要删除吗？',function(index){
+		$.ajax({
+			type: 'POST',
+			url: '',
+			dataType: 'json',
+			success: function(data){
+				$(obj).parents("tr").remove();
+				layer.msg('已删除!',{icon:1,time:1000});
+			},
+			error:function(data) {
+				console.log(data.msg);
+			},
+		});		
+	});
+}
+
+/*资讯-审核*/
+function article_shenhe(obj,id){
+	layer.confirm('审核文章？', {
+		btn: ['通过','不通过','取消'], 
+		shade: false,
+		closeBtn: 0
+	},
+	function(){
+		$(obj).parents("tr").find(".td-manage").prepend('<a class="c-primary" onClick="article_start(this,id)" href="javascript:;" title="申请上线">申请上线</a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
+		$(obj).remove();
+		layer.msg('已发布', {icon:6,time:1000});
+	},
+	function(){
+		$(obj).parents("tr").find(".td-manage").prepend('<a class="c-primary" onClick="article_shenqing(this,id)" href="javascript:;" title="申请上线">申请上线</a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-danger radius">未通过</span>');
+		$(obj).remove();
+    	layer.msg('未通过', {icon:5,time:1000});
+	});	
+}
+/*资讯-下架*/
+function article_stop(obj,id){
+	layer.confirm('确认要下架吗？',function(index){
+		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="article_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已下架</span>');
+		$(obj).remove();
+		layer.msg('已下架!',{icon: 5,time:1000});
+	});
+}
+
+/*资讯-发布*/
+function article_start(obj,id){
+	layer.confirm('确认要发布吗？',function(index){
+		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="article_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
+		$(obj).remove();
+		layer.msg('已发布!',{icon: 6,time:1000});
+	});
+}
+/*资讯-申请上线*/
+function article_shenqing(obj,id){
+	$(obj).parents("tr").find(".td-status").html('<span class="label label-default radius">待审核</span>');
+	$(obj).parents("tr").find(".td-manage").html("");
+	layer.msg('已提交申请，耐心等待审核!', {icon: 1,time:2000});
+}
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>
