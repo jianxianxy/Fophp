@@ -12,22 +12,10 @@ class Loader
 	 * @param string $moduleName
 	 * @return object
 	 */
-	static public function model($modelName, $moduleName=MODULE)
+	static public function model($moduleName,$modelName)
 	{
-		$modelObject = self::_loadModuleFile('models', $modelName, $moduleName);
+		$modelObject = self::_loadModuleFile($moduleName,$modelName);
 		return $modelObject;
-	}
-	
-	/**
-	 * load service object
-	 * @param string $serviceName
-	 * @param string $moduleName
-	 * @return object
-	 */
-	static public function service($serviceName, $moduleName=MODULE)
-	{
-		$serviceObject = self::_loadModuleFile('services', $serviceName, $moduleName);
-		return $serviceObject;
 	}
 	/**
 	 * load module file
@@ -36,16 +24,15 @@ class Loader
 	 * @param string $moduleName
 	 * @return object
 	 */
-	static private function _loadModuleFile($directory, $fileName, $moduleName)
+	static private function _loadModuleFile($moduleName,$fileName)
 	{
         $mod = $moduleName.'_'.$fileName;
         if(self::_get($mod))
         {
             return self::_get($mod);
         }
-        $file = M.'/'.$moduleName.'/'.$directory.'/'.$fileName.'.php';
+        $file = M.'/'.$moduleName.'/models/'.$fileName.'.php';
 		include($file);
-		$fileName .= ($directory == 'models') ? 'Model' : 'Service';
         $fileObject = new $fileName;
         self::_set($mod,$fileObject);
         return $fileObject;
@@ -82,6 +69,10 @@ class Regload
     }
     public function __get($name)
     {
-        return self::$self->$name;
+        if(isset(self::$self->$name)){
+            return self::$self->$name;
+        }else{
+            return false;
+        }
     }
 }

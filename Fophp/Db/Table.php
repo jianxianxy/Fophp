@@ -22,7 +22,9 @@ class Table
             $db_config['password'],
             $db_config['dbname'],
             $db_config['port']);
-        if(!$link) die('无法连接。');
+        if(!$link){
+            exit('无法连接。');
+        }
         $this->_db = $link;
         mysqli_query($this->_db,'SET CHARACTER SET '.$db_config['charset']);
         $this->_tableName = $table;
@@ -160,7 +162,7 @@ class Table
 	
 	/**
 	 * get sql condition
-	 * 
+	 * $condition = array('limit' => '0,10','order' => '`sort` ASC',);
 	 * @param int|string|array $condition
 	 * @return string
 	 */

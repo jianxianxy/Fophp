@@ -8,7 +8,7 @@ class Config
         'action'     => 'Index'
     );
     //数据库配置
-    private static $db_user = array(
+    private static $gman_db = array(
             'host'      => 'localhost',
             'port'      => '3306',
             'username'  => 'root',
@@ -26,9 +26,9 @@ class Config
         return self::$application;
     }
     //返回数据库配置
-    public static function getDbUser()
+    public static function getDbGman()
     {
-        return self::$db_user;
+        return self::$gman_db;
     }
     //返回路由设置
     public static function getRoute()

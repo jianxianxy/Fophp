@@ -36,7 +36,7 @@ foreach($_COOKIE as $key=>$value)
 	StopAttack($key,$value,$cookiefilter);
 }
 //打印Debug消息
-function E($arr,$type=0)
+function dump($arr,$type=0)
 {
     echo '<pre>';
     var_export($arr);
@@ -70,15 +70,10 @@ function addslashes_loop($arr)
     }
 	return $arr;
 }
-//调用模型(模型，模块)
-function M($model,$module=MODULE)
+//调用模型
+function M($module,$model)
 {
-    return library\Loader::model($model,$module);
-}
-//调用服务(服务，模块)
-function S($model,$module=MODULE)
-{
-    return library\Loader::service($model,$module);
+    return \Fophp\Loader::model($module,$model);
 }
 //获取IP
 function getip()
