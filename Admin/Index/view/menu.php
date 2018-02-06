@@ -42,7 +42,7 @@
 				<span class="l">
                 <a href="javascript:;"  id="upImg" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 上传图片</a>
 				<a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
-				<a class="btn btn-primary radius" data-title="添加资讯" _href="article-add.html" onclick="article_add('添加资讯','/Cms/Article/Add')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加资讯</a>
+				<a class="btn btn-primary radius" data-title="添加资讯" _href="article-add.html" onclick="tool_add('添加资讯','/Cms/Article/Add')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加资讯</a>
 				</span>
 			</div>
 			<div class="mt-20">
@@ -62,7 +62,7 @@
 <script type="text/javascript">
 layui.use('table', function(){
   var table = layui.table;
-  table.render({
+  var trobj = table.render({
     elem: '#lay_table'
     ,url: '/Index/System/Menu'
     ,page: { //详细参数可参考 laypage 组件文档
@@ -81,6 +81,13 @@ layui.use('table', function(){
       {field:'manage', title:'操作'},
     ]]
   });
+  fresh = function(){
+      var cpage = $(".layui-input").val();
+      trobj.reload({
+        where: {},
+        page: {curr:cpage}
+      });
+  }
 });
 
 layui.use('upload', function(){
@@ -109,7 +116,7 @@ layui.use('upload', function(){
     });
 });
 /*资讯-添加*/
-function article_add(title,url,w,h){
+function tool_add(title,url){
 	var index = layer.open({
 		type: 2,
 		title: title,
@@ -118,7 +125,7 @@ function article_add(title,url,w,h){
 	layer.full(index);
 }
 /*资讯-编辑*/
-function article_edit(title,url,id,w,h){
+function tool_edit(title,url){
 	var index = layer.open({
 		type: 2,
 		title: title,
@@ -127,7 +134,7 @@ function article_edit(title,url,id,w,h){
 	layer.full(index);
 }
 /*资讯-删除*/
-function article_del(obj,id){
+function tool_del(obj,id){
 	layer.confirm('确认要删除吗？',function(index){
 		$.ajax({
 			type: 'POST',
@@ -144,50 +151,36 @@ function article_del(obj,id){
 	});
 }
 
-/*资讯-审核*/
-function article_shenhe(obj,id){
-	layer.confirm('审核文章？', {
-		btn: ['通过','不通过','取消'], 
-		shade: false,
-		closeBtn: 0
-	},
-	function(){
-		$(obj).parents("tr").find(".td-manage").prepend('<a class="c-primary" onClick="article_start(this,id)" href="javascript:;" title="申请上线">申请上线</a>');
-		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
-		$(obj).remove();
-		layer.msg('已发布', {icon:6,time:1000});
-	},
-	function(){
-		$(obj).parents("tr").find(".td-manage").prepend('<a class="c-primary" onClick="article_shenqing(this,id)" href="javascript:;" title="申请上线">申请上线</a>');
-		$(obj).parents("tr").find(".td-status").html('<span class="label label-danger radius">未通过</span>');
-		$(obj).remove();
-    	layer.msg('未通过', {icon:5,time:1000});
-	});	
-}
 /*资讯-下架*/
-function article_stop(obj,id){
-	layer.confirm('确认要下架吗？',function(index){
-		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="article_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>');
-		$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已下架</span>');
-		$(obj).remove();
-		layer.msg('已下架!',{icon: 5,time:1000});
+function tool_off(obj,id){
+	layer.confirm('确认要禁用吗？',function(flag){
+		if(flag){
+            $.post('/Index/System/MenuStatus',{"id":id,"status":0},function(ret){
+                if(ret.code == 0){
+                    fresh();
+                    layer.msg('操作成功!',{icon: 6,time:1000});
+                }else{
+                    layer.msg('操作失败!',{icon: 5,time:1000});
+                }
+            },"json");
+        }
 	});
 }
 
 /*资讯-发布*/
-function article_start(obj,id){
-	layer.confirm('确认要发布吗？',function(index){
-		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="article_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>');
-		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
-		$(obj).remove();
-		layer.msg('已发布!',{icon: 6,time:1000});
+function tool_on(obj,id){
+	layer.confirm('确认要启用吗？',function(flag){
+        if(flag){
+            $.post('/Index/System/MenuStatus',{"id":id,"status":1},function(ret){
+                if(ret.code == 0){
+                    fresh();
+                    layer.msg('操作成功!',{icon: 6,time:1000});
+                }else{
+                    layer.msg('操作失败!',{icon: 5,time:1000});
+                }
+            },"json");
+        }
 	});
-}
-/*资讯-申请上线*/
-function article_shenqing(obj,id){
-	$(obj).parents("tr").find(".td-status").html('<span class="label label-default radius">待审核</span>');
-	$(obj).parents("tr").find(".td-manage").html("");
-	layer.msg('已提交申请，耐心等待审核!', {icon: 1,time:2000});
 }
 </script>
 <!--/请在上方写此页面业务相关的脚本-->

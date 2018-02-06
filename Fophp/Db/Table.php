@@ -128,7 +128,7 @@ class Table
 		$setSql = rtrim($setSql, ',');
 		$condition = $this->_getCondition($condition);
 		
-		$sql = "UPDATE {$this->_tableName} SET {$setSql} {$condition}";	
+		$sql = "UPDATE {$this->_tableName} SET {$setSql} {$condition}";
 		$this->query($sql);
 		return $this->_db->affected_rows;
 	}

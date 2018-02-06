@@ -11,13 +11,28 @@ class System extends ControllerAbstract{
         if(isset($_GET['page'])){
             $page = getInt('page');
             $limit = getInt('limit');
-            $data = M('Index','Menu')->ajaxPage($page,$limit);
+            $model = M('Index','Menu');
+            $data = $model->ajaxPage($model,$page,$limit);
             echo json_encode($data);
             exit;
         }else{
             $this->display('menu.php');
         }
     }
+    //修改状态
+    public function MenuStatusAction(){
+        $id = getInt('id');
+        $status = getInt('status');
+        $json = array('code' => 1);
+        if($id > 0){
+            $res = M('Index','Menu')->update(array('status'=>$status),array('id:eq'=>$id));
+            if($res){
+                $json['code'] = 0;
+            }
+        }
+        echo json_encode($json);
+    }
+    //创建静态页
     public function MakeMenu(){
         $model = M('Index','Menu');
         $menu = $model->getMenu();

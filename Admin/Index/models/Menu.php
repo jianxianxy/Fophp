@@ -22,5 +22,20 @@ class Menu extends ModelAbstract{
         }
         return $menu;
     }
-    
+    //操作
+    public function getTool($col){
+        $arr = array(
+            'on' => "tool_on(this,'{$col['id']}')",
+            'off' => "tool_off(this,'{$col['id']}')",
+            'del' => "tool_del(this,'{$col['id']}')",
+            'edit' => "tool_edit('编辑','/Index/System/MenuEdit/id/{$col['id']}'",
+            'view' => "tool_view('查看','/Index/System/MenuEdit/id/{$col['id']}'",
+        );
+        if($col['status'] == 0){
+            unset($arr['off']);
+        }else{
+            unset($arr['on']);
+        }
+        return $arr;
+    }
 }
