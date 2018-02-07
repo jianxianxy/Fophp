@@ -5,25 +5,13 @@
 <style>
 .icon_lists li {
 	float: left;
-	width: 100px;
-	height: 190px;
-	text-align: center
+	width: 120px;
+	height: 150px;
+	text-align: center;
 }
-.icon_lists .Hui-iconfont {
-	font-size: 38px;
-	line-height: 100px;
-	margin: 10px 0;
-	color: #333;
-	-webkit-transition: font-size 0.25s ease-out 0s;
-	-moz-transition: font-size 0.25s ease-out 0s;
-	transition: font-size 0.25s ease-out 0s
-}
-.icon_lists .Hui-iconfont:hover {
-	font-size: 100px
-}
-@media (max-width:450px) {
-.icon_lists li {
-	width: 50%}
+.layui-icon {
+    display: inline-block;
+    font-size: 36px;
 }
 </style>
 </head>
@@ -46,577 +34,721 @@
 	</nav>
 	<div class="Hui-article">
 		<article class="cl pd-20">
-			<ul class="icon_lists cl">
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">返回顶部</div>
-					<div class="code">&amp;#xe684;</div>
-					<div class="fontclass">.Hui-iconfont-gotop</div>
-				</li>
-				<li><i class="icon Hui-iconfont"></i>
-					<div class="name">列表</div>
-					<div class="code">&amp;#xe667;</div>
-					<div class="fontclass">.Hui-iconfont-menu</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">剪切</div>
-					<div class="code">&amp;#xe64e;</div>
-					<div class="fontclass">.Hui-iconfont-jiandao</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">搜索2</div>
-					<div class="code">&amp;#xe665;</div>
-					<div class="fontclass">.Hui-iconfont-search2</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">搜索1</div>
-					<div class="code">&amp;#xe709;</div>
-					<div class="fontclass">.Hui-iconfont-search1</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">保存</div>
-					<div class="code">&amp;#xe632;</div>
-					<div class="fontclass">.Hui-iconfont-save</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">撤销</div>
-					<div class="code">&amp;#xe66b;</div>
-					<div class="fontclass">.Hui-iconfont-chexiao</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">重做</div>
-					<div class="code">&amp;#xe66c;</div>
-					<div class="fontclass">.Hui-iconfont-zhongzuo</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">下载</div>
-					<div class="code">&amp;#xe640;</div>
-					<div class="fontclass">.Hui-iconfont-down</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">切换器右</div>
-					<div class="code">&amp;#xe63d;</div>
-					<div class="fontclass">.Hui-iconfont-slider-right</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">切换器左</div>
-					<div class="code">&amp;#xe67d;</div>
-					<div class="fontclass">.Hui-iconfont-slider-left</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">发布</div>
-					<div class="code">&amp;#xe603;</div>
-					<div class="fontclass">.Hui-iconfont-fabu</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">添加</div>
-					<div class="code">&amp;#xe604;</div>
-					<div class="fontclass">.Hui-iconfont-add2</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">换一批</div>
-					<div class="code">&amp;#xe68f;</div>
-					<div class="fontclass">.Hui-iconfont-huanyipi</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">等待</div>
-					<div class="code">&amp;#xe606;</div>
-					<div class="fontclass">.Hui-iconfont-dengdai</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">导出</div>
-					<div class="code">&amp;#xe644;</div>
-					<div class="fontclass">.Hui-iconfont-daochu</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">导入</div>
-					<div class="code">&amp;#xe645;</div>
-					<div class="fontclass">.Hui-iconfont-daoru</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">删除</div>
-					<div class="code">&amp;#xe60b;</div>
-					<div class="fontclass">.Hui-iconfont-del</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">删除</div>
-					<div class="code">&amp;#xe609;</div>
-					<div class="fontclass">.Hui-iconfont-del2</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">删除</div>
-					<div class="code">&amp;#xe6e2;</div>
-					<div class="fontclass">.Hui-iconfont-del3</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">输入</div>
-					<div class="code">&amp;#xe647;</div>
-					<div class="fontclass">.Hui-iconfont-shuru</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">添加</div>
-					<div class="code">&amp;#xe600;</div>
-					<div class="fontclass">.Hui-iconfont-add</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">减号</div>
-					<div class="code">&amp;#xe6a1;</div>
-					<div class="fontclass">.Hui-iconfont-jianhao</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">编辑</div>
-					<div class="code">&amp;#xe60c;</div>
-					<div class="fontclass">.Hui-iconfont-edit2</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">编辑</div>
-					<div class="code">&amp;#xe6df;</div>
-					<div class="fontclass">.Hui-iconfont-edit</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">管理</div>
-					<div class="code">&amp;#xe61d;</div>
-					<div class="fontclass">.Hui-iconfont-manage</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">添加</div>
-					<div class="code">&amp;#xe610;</div>
-					<div class="fontclass">.Hui-iconfont-add3</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">添加</div>
-					<div class="code">&amp;#xe61f;</div>
-					<div class="fontclass">.Hui-iconfont-add4</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">密码</div>
-					<div class="code">&amp;#xe63f;</div>
-					<div class="fontclass">.Hui-iconfont-key</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">解锁</div>
-					<div class="code">&amp;#xe605;</div>
-					<div class="fontclass">.Hui-iconfont-jiesuo</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">锁定</div>
-					<div class="code">&amp;#xe60e;</div>
-					<div class="fontclass">.Hui-iconfont-suoding</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">关闭</div>
-					<div class="code">&amp;#xe6a6;</div>
-					<div class="fontclass">.Hui-iconfont-close</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">关闭2</div>
-					<div class="code">&amp;#xe706;</div>
-					<div class="fontclass">.Hui-iconfont-close2</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">选择</div>
-					<div class="code">&amp;#xe6a7;</div>
-					<div class="fontclass">.Hui-iconfont-xuanze</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">未选</div>
-					<div class="code">&amp;#xe608;</div>
-					<div class="fontclass">.Hui-iconfont-weigouxuan2</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">选中</div>
-					<div class="code">&amp;#xe6a8;</div>
-					<div class="fontclass">.Hui-iconfont-xuanzhong1</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">选中</div>
-					<div class="code">&amp;#xe676;</div>
-					<div class="fontclass">.Hui-iconfont-xuanzhong</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">未选中</div>
-					<div class="code">&amp;#xe677;</div>
-					<div class="fontclass">.Hui-iconfont-weixuanzhong</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">启用</div>
-					<div class="code">&amp;#xe601;</div>
-					<div class="fontclass">.Hui-iconfont-gouxuan2</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">重启</div>
-					<div class="code">&amp;#xe6f7;</div>
-					<div class="fontclass">.Hui-iconfont-chongqi</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">勾选</div>
-					<div class="code">&amp;#xe617;</div>
-					<div class="fontclass">.Hui-iconfont-selected</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">上架</div>
-					<div class="code">&amp;#xe6dc;</div>
-					<div class="fontclass">.Hui-iconfont-shangjia</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">下架</div>
-					<div class="code">&amp;#xe6de;</div>
-					<div class="fontclass">.Hui-iconfont-xiajia</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">上传</div>
-					<div class="code">&amp;#xe642;</div>
-					<div class="fontclass">.Hui-iconfont-upload</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">下载</div>
-					<div class="code">&amp;#xe641;</div>
-					<div class="fontclass">.Hui-iconfont-yundown</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">剪裁</div>
-					<div class="code">&amp;#xe6bc;</div>
-					<div class="fontclass">.Hui-iconfont-caiqie</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">旋转</div>
-					<div class="code">&amp;#xe6bd;</div>
-					<div class="fontclass">.Hui-iconfont-xuanzhuan</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">启用</div>
-					<div class="code">&amp;#xe615;</div>
-					<div class="fontclass">.Hui-iconfont-gouxuan</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">未勾选</div>
-					<div class="code">&amp;#xe614;</div>
-					<div class="fontclass">.Hui-iconfont-weigouxuan</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">录音</div>
-					<div class="code">&amp;#xe619;</div>
-					<div class="fontclass">.Hui-iconfont-luyin</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">预览</div>
-					<div class="code">&amp;#xe695;</div>
-					<div class="fontclass">.Hui-iconfont-yulan</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">审核不通过</div>
-					<div class="code">&amp;#xe6e0;</div>
-					<div class="fontclass">.Hui-iconfont-shenhe-weitongguo</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">审核不通过</div>
-					<div class="code">&amp;#xe6dd;</div>
-					<div class="fontclass">.Hui-iconfont-shenhe-butongguo2</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">审核通过</div>
-					<div class="code">&amp;#xe6e1;</div>
-					<div class="fontclass">.Hui-iconfont-shenhe-tongguo</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">停用</div>
-					<div class="code">&amp;#xe631;</div>
-					<div class="fontclass">.Hui-iconfont-shenhe-tingyong</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">播放</div>
-					<div class="code">&amp;#xe6e6;</div>
-					<div class="fontclass">.Hui-iconfont-bofang</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">上一首</div>
-					<div class="code">&amp;#xe6db;</div>
-					<div class="fontclass">.Hui-iconfont-shangyishou</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">下一首</div>
-					<div class="code">&amp;#xe6e3;</div>
-					<div class="fontclass">.Hui-iconfont-xiayishou</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">暂停</div>
-					<div class="code">&amp;#xe6e5;</div>
-					<div class="fontclass">.Hui-iconfont-zanting</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">停止</div>
-					<div class="code">&amp;#xe6e4;</div>
-					<div class="fontclass">.Hui-iconfont-tingzhi</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">阅读</div>
-					<div class="code">&amp;#xe720;</div>
-					<div class="fontclass">.Hui-iconfont-yuedu</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">眼睛</div>
-					<div class="code">&amp;#xe725;</div>
-					<div class="fontclass">.Hui-iconfont-yanjing</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">电源</div>
-					<div class="code">&amp;#xe726;</div>
-					<div class="fontclass">.Hui-iconfont-power</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">图标2_橡皮擦</div>
-					<div class="code">&amp;#xe72a;</div>
-					<div class="fontclass">.Hui-iconfont-xiangpicha</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">计时器</div>
-					<div class="code">&amp;#xe728;</div>
-					<div class="fontclass">.Hui-iconfont-jishiqi</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">home</div>
-					<div class="code">&amp;#xe625;</div>
-					<div class="fontclass">.Hui-iconfont-home</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">小箭头</div>
-					<div class="code">&amp;#xe67f;</div>
-					<div class="fontclass">.Hui-iconfont-home2</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">cmstop新闻</div>
-					<div class="code">&amp;#xe616;</div>
-					<div class="fontclass">.Hui-iconfont-news</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">图片</div>
-					<div class="code">&amp;#xe613;</div>
-					<div class="fontclass">.Hui-iconfont-tuku</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">音乐</div>
-					<div class="code">&amp;#xe60f;</div>
-					<div class="fontclass">.Hui-iconfont-music</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">标签</div>
-					<div class="code">&amp;#xe64b;</div>
-					<div class="fontclass">.Hui-iconfont-tags</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">语音</div>
-					<div class="code">&amp;#xe66f;</div>
-					<div class="fontclass">.Hui-iconfont-yuyin3</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">系统</div>
-					<div class="code">&amp;#xe62e;</div>
-					<div class="fontclass">.Hui-iconfont-system</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">帮助</div>
-					<div class="code">&amp;#xe633;</div>
-					<div class="fontclass">.Hui-iconfont-help</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">出库</div>
-					<div class="code">&amp;#xe634;</div>
-					<div class="fontclass">.Hui-iconfont-chuku</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">图片</div>
-					<div class="code">&amp;#xe646;</div>
-					<div class="fontclass">.Hui-iconfont-picture</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">分类</div>
-					<div class="code">&amp;#xe681;</div>
-					<div class="fontclass">.Hui-iconfont-fenlei</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">合同管理</div>
-					<div class="code">&amp;#xe636;</div>
-					<div class="fontclass">.Hui-iconfont-hetong</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">全部订单</div>
-					<div class="code">&amp;#xe687;</div>
-					<div class="fontclass">.Hui-iconfont-quanbudingdan</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">任务管理</div>
-					<div class="code">&amp;#xe637;</div>
-					<div class="fontclass">.Hui-iconfont-renwu</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">问题反馈</div>
-					<div class="code">&amp;#xe691;</div>
-					<div class="fontclass">.Hui-iconfont-feedback</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">意见反馈</div>
-					<div class="code">&amp;#xe692;</div>
-					<div class="fontclass">.Hui-iconfont-feedback2</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">合同</div>
-					<div class="code">&amp;#xe639;</div>
-					<div class="fontclass">.Hui-iconfont-dangan</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">日志</div>
-					<div class="code">&amp;#xe623;</div>
-					<div class="fontclass">.Hui-iconfont-log</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">列表页面</div>
-					<div class="code">&amp;#xe626;</div>
-					<div class="fontclass">.Hui-iconfont-pages</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">文件</div>
-					<div class="code">&amp;#xe63e;</div>
-					<div class="fontclass">.Hui-iconfont-file</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">管理</div>
-					<div class="code">&amp;#xe63c;</div>
-					<div class="fontclass">.Hui-iconfont-manage2</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">订单</div>
-					<div class="code">&amp;#xe627;</div>
-					<div class="fontclass">.Hui-iconfont-order</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">语音</div>
-					<div class="code">&amp;#xe6a4;</div>
-					<div class="fontclass">.Hui-iconfont-yuyin2</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">语音</div>
-					<div class="code">&amp;#xe6a5;</div>
-					<div class="fontclass">.Hui-iconfont-yuyin</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">图片</div>
-					<div class="code">&amp;#xe612;</div>
-					<div class="fontclass">.Hui-iconfont-picture1</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">图文详情</div>
-					<div class="code">&amp;#xe685;</div>
-					<div class="fontclass">.Hui-iconfont-tuwenxiangqing</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">模版</div>
-					<div class="code">&amp;#xe72d;</div>
-					<div class="fontclass">.Hui-iconfont-moban-2</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">节日</div>
-					<div class="code">&amp;#xe727;</div>
-					<div class="fontclass">.Hui-iconfont-jieri</div>
-				</li>
-				<li>
-					<i class="icon Hui-iconfont"></i>
-					<div class="name">随你后台-网站</div>
-					<div class="code">&amp;#xe72b;</div>
-					<div class="fontclass">.Hui-iconfont-moban</div>
-				</li>
-			</ul>
+			<ul class="icon_lists">
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">主页</div>
+                  <div class="code">&amp;#xe68e;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">赞</div>
+                  <div class="code">&amp;#xe6c6;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">踩</div>
+                  <div class="code">&amp;#xe6c5;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">男</div>
+                  <div class="code">&amp;#xe662;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">女</div>
+                  <div class="code">&amp;#xe661;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">相机-空心</div>
+                  <div class="code">&amp;#xe660;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">相机-实心</div>
+                  <div class="code">&amp;#xe65d;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">菜单-水平</div>
+                  <div class="code">&amp;#xe65f;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">菜单-竖直</div>
+                  <div class="code">&amp;#xe671;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">返回</div>
+                  <div class="code">&amp;#xe65c;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">Hot</div>
+                  <div class="code">&amp;#xe756;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">等级</div>
+                  <div class="code">&amp;#xe735;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">金额-人民币</div>
+                  <div class="code">&amp;#xe65e;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">金额-美元</div>
+                  <div class="code">&amp;#xe659;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">位置</div>
+                  <div class="code">&amp;#xe715;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">文档</div>
+                  <div class="code">&amp;#xe705;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">检验</div>
+                  <div class="code">&amp;#xe6b2;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">笑脸</div>
+                  <div class="code">&amp;#xe6af;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">哭脸</div>
+                  <div class="code">&amp;#xe69c;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">购物车1</div>
+                  <div class="code">&amp;#xe698;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">购物车2</div>
+                  <div class="code">&amp;#xe657;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">星级</div>
+                  <div class="code">&amp;#xe658;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">上一页</div>
+                  <div class="code">&amp;#xe65a;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">下一页</div>
+                  <div class="code">&amp;#xe65b;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">上传-空心</div>
+                  <div class="code">&amp;#xe681;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">上传-实心</div>
+                  <div class="code">&amp;#xe67c;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">文件夹</div>
+                  <div class="code">&amp;#xe7a0;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">应用</div>
+                  <div class="code">&amp;#xe857;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">播放</div>
+                  <div class="code">&amp;#xe652;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">播放暂停</div>
+                  <div class="code">&amp;#xe651;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">音乐</div>
+                  <div class="code">&amp;#xe6fc;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">视频</div>
+                  <div class="code">&amp;#xe6ed;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">语音</div>
+                  <div class="code">&amp;#xe688;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">喇叭</div>
+                  <div class="code">&amp;#xe645;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">对话</div>
+                  <div class="code">&amp;#xe611;</div>
+                  <div class="fontclass">.duihua</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">设置</div>
+                <div class="code">&amp;#xe614;</div>
+                <div class="fontclass">.shezhi</div>
+                </li>
+
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">隐身-im</div>
+                <div class="code">&amp;#xe60f;</div>
+                <div class="fontclass">.yinshenim</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">搜索</div>
+                <div class="code">&amp;#xe615;</div>
+                <div class="fontclass">.search</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">分享</div>
+                <div class="code">&amp;#xe641;</div>
+                <div class="fontclass">.fenxiang1</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop">ဂ</i>
+                  <div class="name">刷新</div>
+                  <div class="code">&amp;#x1002;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop"></i>
+                  <div class="name">loading</div>
+                  <div class="code">&amp;#xe63d;</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop"></i>
+                  <div class="name">loading</div>
+                  <div class="code">&amp;#xe63e;</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">设置</div>
+                <div class="code">&amp;#xe620;</div>
+                <div class="fontclass">.shezhi1</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">引擎</div>
+                <div class="code">&amp;#xe628;</div>
+                <div class="fontclass">.yinqing</div>
+                </li>
+                <li>
+                <i class="layui-icon">ဆ</i>
+                <div class="name">阅卷错号</div>
+                <div class="code">&amp;#x1006;</div>
+                <div class="fontclass">.yuejuancuohao</div>
+                </li>
+                <li>
+                <i class="layui-icon">ဇ</i>
+                <div class="name">错-</div>
+                <div class="code">&amp;#x1007;</div>
+                <div class="fontclass">.cuo</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">报表</div>
+                <div class="code">&amp;#xe629;</div>
+                <div class="fontclass">.baobiao</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">star</div>
+                <div class="code">&amp;#xe600;</div>
+                <div class="fontclass">.star</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">圆点</div>
+                <div class="code">&amp;#xe617;</div>
+                <div class="fontclass">.yuandian</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">客服</div>
+                <div class="code">&amp;#xe606;</div>
+                <div class="fontclass">.kefu</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">发布</div>
+                <div class="code">&amp;#xe609;</div>
+                <div class="fontclass">.logo</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">21cake_list</div>
+                <div class="code">&amp;#xe60a;</div>
+                <div class="fontclass">.list</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">图表</div>
+                <div class="code">&amp;#xe62c;</div>
+                <div class="fontclass">.tubiao</div>
+                </li>
+                <li>
+                <i class="layui-icon">စ</i>
+                <div class="name">正确</div>
+                <div class="code">&amp;#x1005;</div>
+                <div class="fontclass">.right</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">换肤2</div>
+                <div class="code">&amp;#xe61b;</div>
+                <div class="fontclass">.huanfu2</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">在线</div>
+                <div class="code">&amp;#xe610;</div>
+                <div class="fontclass">.On-line</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">右右</div>
+                <div class="code">&amp;#xe602;</div>
+                <div class="fontclass">.youyou</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">左左</div>
+                <div class="code">&amp;#xe603;</div>
+                <div class="fontclass">.zuozuo</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">表格</div>
+                  <div class="code">&amp;#xe62d;</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">icon_树</div>
+                <div class="code">&amp;#xe62e;</div>
+                <div class="fontclass">.icon5</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">上传</div>
+                <div class="code">&amp;#xe62f;</div>
+                <div class="fontclass">.iconfont17</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">添加</div>
+                <div class="code">&amp;#xe61f;</div>
+                <div class="fontclass">.tianjia</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">下载</div>
+                <div class="code">&amp;#xe601;</div>
+                <div class="fontclass">.xiazai</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">选择模版48</div>
+                <div class="code">&amp;#xe630;</div>
+                <div class="fontclass">.xuanzemoban48</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">工具</div>
+                <div class="code">&amp;#xe631;</div>
+                <div class="fontclass">.gongju</div>
+                </li>
+
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">添加</div>
+                  <div class="code">&amp;#xe654;</div>
+                </li>
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">编辑</div>
+                  <div class="code">&amp;#xe642;</div>
+                </li>
+                <li>
+                  <i class="layui-icon"></i>
+                  <div class="name">删除</div>
+                  <div class="code">&amp;#xe640;</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">向下</div>
+                <div class="code">&amp;#xe61a;</div>
+                <div class="fontclass">.xiangxia</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">文件</div>
+                <div class="code">&amp;#xe621;</div>
+                <div class="fontclass">.wenjian</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">布局</div>
+                <div class="code">&amp;#xe632;</div>
+                <div class="fontclass">.layouts</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">对勾</div>
+                <div class="code">&amp;#xe618;</div>
+                <div class="fontclass">.duigou</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">添加</div>
+                <div class="code">&amp;#xe608;</div>
+                <div class="fontclass">.tianjia1</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">么么直播－翻页</div>
+                <div class="code">&amp;#xe633;</div>
+                <div class="fontclass">.yaoyaozhibofanye</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">404</div>
+                <div class="code">&amp;#xe61c;</div>
+                <div class="fontclass">.404</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">轮播组图</div>
+                <div class="code">&amp;#xe634;</div>
+                <div class="fontclass">.lunbozutu</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">help</div>
+                <div class="code">&amp;#xe607;</div>
+                <div class="fontclass">.help</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">代码1</div>
+                <div class="code">&amp;#xe635;</div>
+                <div class="fontclass">.daima1</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">进水</div>
+                <div class="code">&amp;#xe636;</div>
+                <div class="fontclass">.jinshui</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">关于</div>
+                <div class="code">&amp;#xe60b;</div>
+                <div class="fontclass">.guanyu</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">向上</div>
+                <div class="code">&amp;#xe619;</div>
+                <div class="fontclass">.xiangshang</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">日期</div>
+                <div class="code">&amp;#xe637;</div>
+                <div class="fontclass">.riqi</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">文件</div>
+                <div class="code">&amp;#xe61d;</div>
+                <div class="fontclass">.wenjian1</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">top</div>
+                <div class="code">&amp;#xe604;</div>
+                <div class="fontclass">.top</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">好友请求</div>
+                <div class="code">&amp;#xe612;</div>
+                <div class="fontclass">.haoyouqingqiu</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">对</div>
+                <div class="code">&amp;#xe605;</div>
+                <div class="fontclass">.weibiaoti1</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">窗口</div>
+                <div class="code">&amp;#xe638;</div>
+                <div class="fontclass">.chuangkou</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">表情</div>
+                <div class="code">&amp;#xe60c;</div>
+                <div class="fontclass">.comiisbiaoqing</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">正确</div>
+                <div class="code">&amp;#xe616;</div>
+                <div class="fontclass">.zhengque</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">我的好友</div>
+                <div class="code">&amp;#xe613;</div>
+                <div class="fontclass">.iconfontwodehaoyou</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">文件下载</div>
+                <div class="code">&amp;#xe61e;</div>
+                <div class="fontclass">.wenjianxiazai</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">图片</div>
+                <div class="code">&amp;#xe60d;</div>
+                <div class="fontclass">.tupian</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">链接</div>
+                <div class="code">&amp;#xe64c;</div>
+                <div class="fontclass">.lianjie</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">记录</div>
+                <div class="code">&amp;#xe60e;</div>
+                <div class="fontclass">.jilu</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">文件夹</div>
+                <div class="code">&amp;#xe622;</div>
+                <div class="fontclass">.liucheng</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">font-strikethrough</div>
+                <div class="code">&amp;#xe64f;</div>
+                <div class="fontclass">.fontstrikethrough</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">unlink</div>
+                <div class="code">&amp;#xe64d;</div>
+                <div class="fontclass">.unlink</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">编辑_文字</div>
+                <div class="code">&amp;#xe639;</div>
+                <div class="fontclass">.bianjiwenzi</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">三角</div>
+                <div class="code">&amp;#xe623;</div>
+                <div class="fontclass">.sanjiao</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">单选框-候选</div>
+                <div class="code">&amp;#xe63f;</div>
+                <div class="fontclass">.danxuankuanghouxuan</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">单选框-选中</div>
+                <div class="code">&amp;#xe643;</div>
+                <div class="fontclass">.danxuankuangxuanzhong</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">居中对齐</div>
+                <div class="code">&amp;#xe647;</div>
+                <div class="fontclass">.juzhongduiqi</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">右对齐</div>
+                <div class="code">&amp;#xe648;</div>
+                <div class="fontclass">.youduiqi</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">左对齐</div>
+                <div class="code">&amp;#xe649;</div>
+                <div class="fontclass">.zuoduiqi</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">勾选框（未打勾）</div>
+                <div class="code">&amp;#xe626;</div>
+                <div class="fontclass">.gongsisvgtubiaozongji22</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">勾选框（已打勾）</div>
+                <div class="code">&amp;#xe627;</div>
+                <div class="fontclass">.gongsisvgtubiaozongji23</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">加粗</div>
+                <div class="code">&amp;#xe62b;</div>
+                <div class="fontclass">.jiacu</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">聊天 对话 IM 沟通</div>
+                <div class="code">&amp;#xe63a;</div>
+                <div class="fontclass">.liaotianduihuaimgoutong</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">文件夹_反</div>
+                <div class="code">&amp;#xe624;</div>
+                <div class="fontclass">.wenjianjiafan</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">手机</div>
+                <div class="code">&amp;#xe63b;</div>
+                <div class="fontclass">.shouji</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">表情</div>
+                <div class="code">&amp;#xe650;</div>
+                <div class="fontclass">.biaoqing</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">html</div>
+                <div class="code">&amp;#xe64b;</div>
+                <div class="fontclass">.html</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">表单</div>
+                <div class="code">&amp;#xe63c;</div>
+                <div class="fontclass">.biaodan</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">tab</div>
+                <div class="code">&amp;#xe62a;</div>
+                <div class="fontclass">.25</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">emw_代码</div>
+                <div class="code">&amp;#xe64e;</div>
+                <div class="fontclass">.emwdaima</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">字体-下划线</div>
+                <div class="code">&amp;#xe646;</div>
+                <div class="fontclass">.zitixiahuaxian</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">三角</div>
+                <div class="code">&amp;#xe625;</div>
+                <div class="fontclass">.sanjiao1</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">图片</div>
+                <div class="code">&amp;#xe64a;</div>
+                <div class="fontclass">.tupian-copy-copy</div>
+                </li>
+                <li>
+                <i class="layui-icon"></i>
+                <div class="name">斜体</div>
+                <div class="code">&amp;#xe644;</div>
+                <div class="fontclass">.xieti</div>
+                </li>
+              </ul>
         </article>
 	</div>
 </section>

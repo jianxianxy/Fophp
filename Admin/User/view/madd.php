@@ -15,8 +15,10 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>图片：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <a href="javascript:;"  id="upImg" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe642;</i> 上传图片</a>
-                <div id="img_show"></div>
+                <div class="layui-upload-drag" id="upImg">
+                    <i class="layui-icon">&#xe67c;</i>
+                    <p>上传图片</p>
+                </div>
             </div>
         </div>
         <div class="row cl">
@@ -152,7 +154,7 @@ layui.use('upload', function(){
           return layer.msg('上传失败');
         }else{
             var img = '<img src="'+res.url+'" width="100" height="100">';
-            $("#img_show").html(img);
+            $("#upImg").html(img);
         }
       },
       error: function(){
