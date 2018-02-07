@@ -8,14 +8,16 @@ class System extends ControllerAbstract{
     }
     //菜单
     public function MenuAction(){
+        $model = M('Index','Menu');
         if(isset($_GET['page'])){
             $page = getInt('page');
             $limit = getInt('limit');
-            $model = M('Index','Menu');
             $data = $model->ajaxPage($model,$page,$limit);
             echo json_encode($data);
             exit;
         }else{
+            $menu = $model->select(array('pid:eq'=>0));
+            $this->assign("menu", $menu);
             $this->display('menu.php');
         }
     }
@@ -33,7 +35,8 @@ class System extends ControllerAbstract{
         echo json_encode($json);
     }
     //创建静态页
-    public function MakeMenu(){
+    public function MakeMenuAction(){
+        $json = array('code' => 1);
         $model = M('Index','Menu');
         $menu = $model->getMenu();
         $this->assign('menu', $menu);
@@ -43,10 +46,14 @@ class System extends ControllerAbstract{
         ob_end_clean();
         $file = M.'/layout/_menu.html';
         $r = file_put_contents($file, $html);
-        echo $r;
+        if($r){
+            $json['code'] = 0;
+        }
+        echo json_encode($json);
+        exit;
     }
-    //屏蔽词
-    function LimitWordAction(){
-        $this->display('limit_word.php');
+    //图标
+    function IconAction(){
+        $this->display('icon.php');
     }
 }

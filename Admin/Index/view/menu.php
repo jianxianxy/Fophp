@@ -2,7 +2,6 @@
 <html>
 <head>
 <?php include(LAY.'/_head.html');?>
-<link rel="stylesheet" href="/lib/layui/dist/css/layui.css">
 </head>
 <body>
 <!--_header 作为公共模版分离出去-->
@@ -19,30 +18,30 @@
 		资讯管理
 		<span class="c-gray en">&gt;</span>
 		资讯列表
-		<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+		<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.reload();" title="刷新" >
+            <i class="Hui-iconfont">&#xe68f;</i>
+        </a>
 	</nav>
 	<div class="Hui-article">
 		<article class="cl pd-20">
 			<div>
 				<span class="select-box inline">
 				<select name="" class="select">
-					<option value="0">全部分类</option>
-					<option value="1">分类一</option>
-					<option value="2">分类二</option>
+                    <?php foreach($this->menu AS $val):?>
+                    <option value="<?php echo $val['id'];?>"><?php echo $val['name'];?></option>
+                    <?php endforeach;?>
 				</select>
 				</span>
-				日期范围：
-				<input type="text" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}'})" id="logmin" class="input-text Wdate" style="width:120px;">
-				-
-				<input type="text" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d'})" id="logmax" class="input-text Wdate" style="width:120px;">
-				<input type="text" name="" id="" placeholder=" 资讯名称" style="width:250px" class="input-text">
-				<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜资讯</button>
+				名称：
+				<input type="text" name="" id="" placeholder=" 名称" style="width:150px" class="input-text">
+				<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
 			</div>
 			<div class="cl pd-5 bg-1 bk-gray mt-20">
 				<span class="l">
-                <a href="javascript:;"  id="upImg" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 上传图片</a>
+                <a href="javascript:;"  id="upImg" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe642;</i> 上传图片</a>
 				<a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
 				<a class="btn btn-primary radius" data-title="添加资讯" _href="article-add.html" onclick="tool_add('添加资讯','/Cms/Article/Add')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加资讯</a>
+                <a href="javascript:;" onclick="upMenu()" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe603;</i> 更新菜单</a>
 				</span>
 			</div>
 			<div class="mt-20">
@@ -57,8 +56,6 @@
 <!--/_footer /作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="/lib/My97DatePicker/4.8/WdatePicker.js"></script>
-<script type="text/javascript" src="/lib/layui/dist/layui.js"></script>
 <script type="text/javascript">
 layui.use('table', function(){
   var table = layui.table;
@@ -81,6 +78,7 @@ layui.use('table', function(){
       {field:'manage', title:'操作'},
     ]]
   });
+  //刷新
   fresh = function(){
       var cpage = $(".layui-input").val();
       trobj.reload({
@@ -99,10 +97,6 @@ layui.use('upload', function(){
       size: 300, //限制文件大小，单位 KB
       accept: 'file',
       exts: "jpg|png|gif|bmp|jpeg|pdf",
-      before: function(obj){
-        //预读本地文件示例，不支持ie8
-
-      },
       done: function(res){
         //如果上传失败
         if(res.code > 0){
@@ -181,6 +175,16 @@ function tool_on(obj,id){
             },"json");
         }
 	});
+}
+/* 更才菜单 */
+function upMenu(){
+    $.get('/Index/System/MakeMenu/',{},function(data){
+        if(data.code == 0){
+            layer.msg('生成成功!',{icon: 6,time:1000});
+        }else{
+            layer.msg('生成失败!',{icon: 5,time:1000});
+        }
+    },"json");
 }
 </script>
 <!--/请在上方写此页面业务相关的脚本-->
