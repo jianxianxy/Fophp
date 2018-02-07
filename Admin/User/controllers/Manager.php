@@ -8,7 +8,16 @@ class Manager extends ControllerAbstract{
     }
     //列表
     function IndexAction(){
-        $this->display('mlist.php');
+        if(isset($_GET['page'])){
+            $model = M('User','ManagerModel');
+            $page = getInt('page');
+            $limit = getInt('limit');
+            $data = $model->ajaxPage($model,$page,$limit);
+            echo json_encode($data);
+            exit;
+        }else{
+            $this->display('mlist.php');
+        }
     }
     //添加
     function AddAction(){

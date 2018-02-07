@@ -7,9 +7,16 @@
 <article class="cl pd-20">
     <form action="" method="post" class="form form-horizontal" id="form-admin-add">
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>管理员：</label>
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>工号：</label>
             <div class="formControls col-xs-8 col-sm-9">
                 <input type="text" class="input-text" value="" placeholder="" id="adminName" name="adminName">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>图片：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <a href="javascript:;"  id="upImg" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe642;</i> 上传图片</a>
+                <div id="img_show"></div>
             </div>
         </div>
         <div class="row cl">
@@ -128,6 +135,29 @@ $(function () {
             parent.$('.btn-refresh').click();
             parent.layer.close(index);
         }
+    });
+});
+layui.use('upload', function(){
+    var upload = layui.upload;
+    upload.render({
+      elem: '#upImg',
+      field: 'upfile',
+      url: '/lib/ueditor/1.4.3/php/controller.php?action=uploadimage',
+      size: 300, //限制文件大小，单位 KB
+      accept: 'file',
+      exts: "jpg|png|gif|bmp|jpeg|pdf",
+      done: function(res){
+        //如果上传失败
+        if(res.state != 'SUCCESS'){
+          return layer.msg('上传失败');
+        }else{
+            var img = '<img src="'+res.url+'" width="100" height="100">';
+            $("#img_show").html(img);
+        }
+      },
+      error: function(){
+        return layer.msg('上传失败');
+      }
     });
 });
 </script>
