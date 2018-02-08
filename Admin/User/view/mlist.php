@@ -73,12 +73,9 @@ layui.use('table', function(){
       });
   }
 });
-
-/*资讯-添加*/
 function tool_add(title,url){
     layer_show(title,url,800,620);
 }
-/*资讯-编辑*/
 function tool_edit(title,url){
 	var index = layer.open({
 		type: 2,
@@ -87,7 +84,6 @@ function tool_edit(title,url){
 	});
 	layer.full(index);
 }
-/*资讯-删除*/
 function tool_del(obj,id){
 	layer.confirm('确认要删除吗？',function(index){
 		$.ajax({
@@ -104,8 +100,6 @@ function tool_del(obj,id){
 		});		
 	});
 }
-
-/*资讯-下架*/
 function tool_off(obj,id){
 	layer.confirm('确认要禁用吗？',function(flag){
 		if(flag){
@@ -120,8 +114,6 @@ function tool_off(obj,id){
         }
 	});
 }
-
-/*资讯-发布*/
 function tool_on(obj,id){
 	layer.confirm('确认要启用吗？',function(flag){
         if(flag){

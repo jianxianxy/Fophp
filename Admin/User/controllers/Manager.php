@@ -25,10 +25,22 @@ class Manager extends ControllerAbstract{
     }
     //角色
     function RoleAction(){
-        $this->display('mrole.php');
+        if(isset($_GET['page'])){
+            $model = M('User','RoleModel');
+            $page = getInt('page');
+            $limit = getInt('limit');
+            $data = $model->ajaxPage($model,$page,$limit);
+            echo json_encode($data);
+            exit;
+        }else{
+            $this->display('mrole.php');
+        }
     }
     //添加角色
     function RoleAddAction(){
+        $model = M('Index','MenuModel');
+        $menu = $model->getMenu();
+        $this->assign('menu', $menu);
         $this->display('mrole_add.php');
     }
     //权限

@@ -8,7 +8,7 @@ class System extends ControllerAbstract{
     }
     //菜单
     public function MenuAction(){
-        $model = M('Index','Menu');
+        $model = M('Index','MenuModel');
         if(isset($_GET['page'])){
             $page = getInt('page');
             $limit = getInt('limit');
@@ -37,7 +37,7 @@ class System extends ControllerAbstract{
     //创建静态页
     public function MakeMenuAction(){
         $json = array('code' => 1);
-        $model = M('Index','Menu');
+        $model = M('Index','MenuModel');
         $menu = $model->getMenu();
         $this->assign('menu', $menu);
         ob_start();

@@ -18,60 +18,13 @@
 		<article class="cl pd-20">
 			<div class="cl pd-5 bg-1 bk-gray"> 
                 <span class="l"> 
-                    <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> 
-                    <a class="btn btn-primary radius" href="javascript:;" onclick="admin_role_add('添加角色','/User/Manager/RoleAdd','800')"><i class="Hui-iconfont">&#xe600;</i> 添加角色</a> 
+                    <a class="btn btn-primary radius" href="javascript:;" onclick="tool_add('添加角色','/User/Manager/RoleAdd','800')">
+                        <i class="Hui-iconfont">&#xe600;</i> 添加角色
+                    </a> 
                 </span> 
-                <span class="r">共有数据：<strong>54</strong> 条</span> </div>
+            </div>
 			<div class="mt-10">
-			<table class="table table-border table-bordered table-hover table-bg">
-				<thead>
-					<tr>
-						<th scope="col" colspan="6">角色管理</th>
-					</tr>
-					<tr class="text-c">
-						<th width="25"><input type="checkbox" value="" name=""></th>
-						<th width="40">ID</th>
-						<th width="200">角色名</th>
-						<th>用户列表</th>
-						<th width="300">描述</th>
-						<th width="70">操作</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr class="text-c">
-						<td><input type="checkbox" value="" name=""></td>
-						<td>1</td>
-						<td>超级管理员</td>
-						<td><a href="#">admin</a></td>
-						<td>拥有至高无上的权利</td>
-						<td class="f-14"><a title="编辑" href="javascript:;" onclick="admin_role_edit('角色编辑','admin-role-add.html','1')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_role_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-					</tr>
-					<tr class="text-c">
-						<td><input type="checkbox" value="" name=""></td>
-						<td>2</td>
-						<td>总编</td>
-						<td><a href="#">张三</a></td>
-						<td>具有添加、审核、发布、删除内容的权限</td>
-						<td class="f-14"><a title="编辑" href="javascript:;" onclick="admin_role_edit('角色编辑','admin-role-add.html','2')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_role_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-					</tr>
-					<tr class="text-c">
-						<td><input type="checkbox" value="" name=""></td>
-						<td>3</td>
-						<td>栏目主辑</td>
-						<td><a href="#">李四</a>，<a href="#">王五</a></td>
-						<td>只对所在栏目具有添加、审核、发布、删除内容的权限</td>
-						<td class="f-14"><a title="编辑" href="javascript:;" onclick="admin_role_edit('角色编辑','admin-role-add.html','3')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_role_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-					</tr>
-					<tr class="text-c">
-						<td><input type="checkbox" value="" name=""></td>
-						<td>4</td>
-						<td>栏目编辑</td>
-						<td><a href="#">赵六</a>，<a href="#">钱七</a></td>
-						<td>只对所在栏目具有添加、删除草稿等权利。</td>
-						<td class="f-14"><a title="编辑" href="javascript:;" onclick="admin_role_edit('角色编辑','admin-role-add.html','4')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_role_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-					</tr>
-				</tbody>
-			</table>
+                <table id="lay_table" lay-filter="lay_table"></table>
 			</div>
 		</article>
 	</div>
@@ -82,26 +35,70 @@
 <!--/_footer /作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="/lib/My97DatePicker/4.8/WdatePicker.js"></script>
-<script type="text/javascript" src="/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="/lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
-/*管理员-角色-添加*/
-function admin_role_add(title,url,w,h){
-	layer_show(title,url,w,h);
+layui.use('table', function(){
+  var table = layui.table;
+  var trobj = table.render({
+    elem: '#lay_table'
+    ,url: '/User/Manager/Role'
+    ,page: { //详细参数可参考 laypage 组件文档
+      curr: 1
+      ,layout: ['limit', 'prev', 'page', 'next', 'count','skip'] //自定义分页布局
+    }
+    ,cellMinWidth: 80
+    ,cols: [[
+      {field:'id', title:'ID', unresize: true, sort: true},
+      {field:'role_name', title:'角色名称'},
+      {field:'status', title:'状态'},
+      {field:'manage', title:'操作'},
+    ]]
+  });
+  //刷新
+  fresh = function(){
+      var cpage = $(".layui-input").val();
+      trobj.reload({
+        where: {},
+        page: {curr:cpage}
+      });
+  }
+});
+function tool_add(title,url){
+    layer_show(title,url,800,620);
 }
-/*管理员-角色-编辑*/
-function admin_role_edit(title,url,id,w,h){
-	layer_show(title,url,w,h);
+function tool_edit(title,url){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
 }
-/*管理员-角色-删除*/
-function admin_role_del(obj,id){
-	layer.confirm('角色删除须谨慎，确认要删除吗？',function(index){
-		//此处请求后台程序，下方是成功后的前台处理……
-		
-		
-		$(obj).parents("tr").remove();
-		layer.msg('已删除!',{icon:1,time:1000});
+function tool_off(obj,id){
+	layer.confirm('确认要禁用吗？',function(flag){
+		if(flag){
+            $.post('/Index/System/MenuStatus',{"id":id,"status":0},function(ret){
+                if(ret.code == 0){
+                    fresh();
+                    layer.msg('操作成功!',{icon: 6,time:1000});
+                }else{
+                    layer.msg('操作失败!',{icon: 5,time:1000});
+                }
+            },"json");
+        }
+	});
+}
+function tool_on(obj,id){
+	layer.confirm('确认要启用吗？',function(flag){
+        if(flag){
+            $.post('/Index/System/MenuStatus',{"id":id,"status":1},function(ret){
+                if(ret.code == 0){
+                    fresh();
+                    layer.msg('操作成功!',{icon: 6,time:1000});
+                }else{
+                    layer.msg('操作失败!',{icon: 5,time:1000});
+                }
+            },"json");
+        }
 	});
 }
 </script>

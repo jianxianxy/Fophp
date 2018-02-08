@@ -3,7 +3,7 @@
  * 菜单
  */
 
-class Menu extends ModelAbstract{
+class MenuModel extends ModelAbstract{
     //初始化
     function __construct() {
         $db_config = Config::getDbGman();

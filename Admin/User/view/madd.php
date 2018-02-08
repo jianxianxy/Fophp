@@ -5,140 +5,77 @@
 </head>
 <body>
 <article class="cl pd-20">
-    <form action="" method="post" class="form form-horizontal" id="form-admin-add">
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>工号：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="" placeholder="" id="adminName" name="adminName">
-            </div>
-        </div>
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>图片：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-                <div class="layui-upload-drag" id="upImg">
-                    <i class="layui-icon">&#xe67c;</i>
-                    <p>上传图片</p>
+    <div class="site-text site-block">
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">输入框</label>
+                <div class="layui-input-block">
+                    <input name="title" lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input" type="text">
                 </div>
             </div>
-        </div>
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>初始密码：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-                <input type="password" class="input-text" autocomplete="off" value="" placeholder="密码" id="password" name="password">
-            </div>
-        </div>
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>确认密码：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-                <input type="password" class="input-text" autocomplete="off"  placeholder="确认新密码" id="password2" name="password2">
-            </div>
-        </div>
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>性别：</label>
-            <div class="formControls col-xs-8 col-sm-9 skin-minimal">
-                <div class="radio-box">
-                    <input name="sex" type="radio" id="sex-1" checked>
-                    <label for="sex-1">男</label>
+            <div class="layui-form-item">
+                <label class="layui-form-label">密码框</label>
+                <div class="layui-input-inline">
+                    <input name="password" lay-verify="required" lay-vertype="tips" placeholder="请输入密码" autocomplete="off" class="layui-input" type="password">
                 </div>
-                <div class="radio-box">
-                    <input type="radio" id="sex-2" name="sex">
-                    <label for="sex-2">女</label>
+                <div class="layui-form-mid layui-word-aux">辅助文字</div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">选择框</label>
+                <div class="layui-input-block">
+                    <select name="city" lay-verify="required">
+                        <option value=""></option>
+                        <option value="0">北京</option>
+                        <option value="1">上海</option>
+                        <option value="2">广州</option>
+                        <option value="3">深圳</option>
+                        <option value="4">杭州</option>
+                    </select><div class="layui-unselect layui-form-select"><div class="layui-select-title"><input placeholder="请选择" value="" readonly="" class="layui-input layui-unselect" type="text"><i class="layui-edge"></i></div><dl class="layui-anim layui-anim-upbit"><dd lay-value="" class="layui-select-tips">请选择</dd><dd lay-value="0" class="">北京</dd><dd lay-value="1" class="">上海</dd><dd lay-value="2" class="">广州</dd><dd lay-value="3" class="">深圳</dd><dd lay-value="4" class="">杭州</dd></dl></div>
                 </div>
             </div>
-        </div>
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>手机：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="" placeholder="" id="phone" name="phone">
+            <div class="layui-form-item">
+                <label class="layui-form-label">复选框</label>
+                <div class="layui-input-block">
+                    <input name="like[write]" title="写作" type="checkbox"><div class="layui-unselect layui-form-checkbox" lay-skin=""><span>写作</span><i class="layui-icon"></i></div>
+                    <input name="like[read]" title="阅读" checked="" type="checkbox"><div class="layui-unselect layui-form-checkbox layui-form-checked" lay-skin=""><span>阅读</span><i class="layui-icon"></i></div>
+                    <input name="like[dai]" title="发呆" type="checkbox"><div class="layui-unselect layui-form-checkbox" lay-skin=""><span>发呆</span><i class="layui-icon"></i></div>
+                </div>
             </div>
-        </div>
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>邮箱：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" placeholder="@" name="email" id="email">
+            <div class="layui-form-item">
+                <label class="layui-form-label">开关</label>
+                <div class="layui-input-block">
+                    <input name="switch" lay-skin="switch" lay-text="ON|OFF" lay-filter="switchTest" value="1" type="checkbox"><div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>OFF</em><i></i></div>
+                </div>
             </div>
-        </div>
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-3">角色：</label>
-            <div class="formControls col-xs-8 col-sm-9"> <span class="select-box" style="width:150px;">
-                    <select class="select" name="adminRole" size="1">
-                        <option value="0">超级管理员</option>
-                        <option value="1">总编</option>
-                        <option value="2">栏目主辑</option>
-                        <option value="3">栏目编辑</option>
-                    </select>
-                </span> </div>
-        </div>
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-3">备注：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-                <textarea name="" cols="" rows="" class="textarea"  placeholder="说点什么...100个字符以内" dragonfly="true" onKeyUp="textarealength(this, 100)"></textarea>
-                <p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
+            <div class="layui-form-item">
+                <label class="layui-form-label">单选框</label>
+                <div class="layui-input-block">
+                    <input name="sex" value="男" title="男" type="radio"><div class="layui-unselect layui-form-radio layui-form-radioed"><i class="layui-anim layui-icon layui-anim-scaleSpring"></i><div>男</div></div>
+                    <input name="sex" value="女" title="女" checked="" type="radio"><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><div>女</div></div>
+                </div>
             </div>
-        </div>
-        <div class="row cl">
-            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
-                <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">文本域</label>
+                <div class="layui-input-block">
+                    <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+                </div>
             </div>
-        </div>
-    </form>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit="" lay-filter="formSubmit">立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </article>
-
 <!--_footer 作为公共模版分离出去-->
 <?php include(LAY.'/_foot.html');?>
 <!--/_footer /作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="/lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
-<script type="text/javascript" src="/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
-<script type="text/javascript" src="/lib/jquery.validation/1.14.0/messages_zh.js"></script> 
 <script type="text/javascript">
-$(function () {
-    $('.skin-minimal input').iCheck({
-        checkboxClass: 'icheckbox-blue',
-        radioClass: 'iradio-blue',
-        increaseArea: '20%'
-    });
-    $("#form-admin-add").validate({
-        rules: {
-            adminName: {
-                required: true,
-                minlength: 4,
-                maxlength: 16
-            },
-            password: {
-                required: true,
-            },
-            password2: {
-                required: true,
-                equalTo: "#password"
-            },
-            sex: {
-                required: true,
-            },
-            phone: {
-                required: true,
-                isPhone: true,
-            },
-            email: {
-                required: true,
-                email: true,
-            },
-            adminRole: {
-                required: true,
-            },
-        },
-        onkeyup: false,
-        focusCleanup: true,
-        success: "valid",
-        submitHandler: function (form) {
-            $(form).ajaxSubmit();
-            var index = parent.layer.getFrameIndex(window.name);
-            parent.$('.btn-refresh').click();
-            parent.layer.close(index);
-        }
-    });
-});
+
 layui.use('upload', function(){
     var upload = layui.upload;
     upload.render({
@@ -161,6 +98,14 @@ layui.use('upload', function(){
         return layer.msg('上传失败');
       }
     });
+});
+layui.use('form', function(){
+  var form = layui.form;
+  //监听提交
+  form.on('submit(formSubmit)', function(data){
+    layer.msg(JSON.stringify(data.field));
+    return false;
+  });
 });
 </script>
 <!--/请在上方写此页面业务相关的脚本-->
