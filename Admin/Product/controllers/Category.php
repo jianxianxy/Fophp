@@ -7,11 +7,11 @@ class Category extends ControllerAbstract{
         parent::__construct();
     }
     //列表
-    function IndexAction(){
+    function indexAction(){
         $this->display('clist.php');
     }
     //添加
-    function AddAction(){
+    function addAction(){
         $this->display('cadd.php');
     }
 }

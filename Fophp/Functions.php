@@ -85,3 +85,10 @@ function getip()
 function getInt($name,$def = 0){
     return isset($_REQUEST[$name]) ? intval($_REQUEST[$name]) : $def; 
 }
+
+//选中 selected checked disabled
+function vTag($id,$arr,$tag = 'checked'){
+    if(in_array($id,$arr)){
+        echo $tag;
+    }
+}

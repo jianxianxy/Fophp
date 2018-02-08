@@ -4,6 +4,7 @@
  */
 class Controller
 {
+    public $form = array();
     //获取请求信息
     public function _get()
     {
@@ -13,6 +14,21 @@ class Controller
     public function assign($key,$val)
     {
         $this->$key = $val;
+    }
+    public function form($val){
+        $this->form = $val;
+    }
+    public function field($name,$mod = 'echo'){
+        if(isset($this->form[$name])){
+            $col = $this->form[$name];
+        }else{
+            $col = '';
+        }
+        if($mod == 'echo'){
+            echo $col; 
+        }else{
+            return $col;
+        }
     }
     //调用模板
     public function display($view)

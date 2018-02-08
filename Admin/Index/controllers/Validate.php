@@ -4,7 +4,7 @@
  */
 class Validate{
     //验证码
-    public function IndexAction(){
+    public function indexAction(){
         $seKey = 'RANDOM_CODE';
 		$codeSet = 'ABCDEFG2345HJKLMNPQRSTUVWXYZabcd6789efghjkmnpqrstuvwxyz';
 		if(empty($_GET['width'])) {

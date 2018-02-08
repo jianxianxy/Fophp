@@ -7,11 +7,11 @@ class Product extends ControllerAbstract{
         parent::__construct();
     }
     //列表
-    function IndexAction(){
+    function indexAction(){
         $this->display('plist.php');
     }
     //添加
-    function AddAction(){
+    function addAction(){
         $this->display('padd.php');
     }
 }

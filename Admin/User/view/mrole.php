@@ -66,12 +66,7 @@ function tool_add(title,url){
     layer_show(title,url,800,620);
 }
 function tool_edit(title,url){
-	var index = layer.open({
-		type: 2,
-		title: title,
-		content: url
-	});
-	layer.full(index);
+	layer_show(title,url,800,620);
 }
 function tool_off(obj,id){
 	layer.confirm('确认要禁用吗？',function(flag){

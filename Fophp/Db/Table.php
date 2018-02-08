@@ -81,6 +81,20 @@ class Table
 		}
 		return $result;
 	}
+    //获取一行
+    public function row($conditions, $fields = '*') 
+	{
+        if(is_int($conditions)){
+            $conditionSql = ' WHERE '.$this->_primaryKey.' = '.$conditions;
+        }else{
+            $conditionSql = $this->_getCondition($conditions);
+        }
+		$fieldSql = $this->_getFieldSql($fields);
+		$sql = "SELECT {$fieldSql} FROM {$this->_tableName} {$conditionSql}";
+		$query = $this->query($sql);
+		$result = $this->fetchRow($query);
+		return $result;
+	}
     /**
 	 * 插入数据
 	 * @param array $data

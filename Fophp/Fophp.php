@@ -40,7 +40,7 @@ class Fophp
             $config = Config::getConfig();
             isset($URI[0]) AND $modul = ucfirst($URI[0]) OR $modul = $config['modul'];
             isset($URI[1]) AND $controller = ucfirst($URI[1]) OR $controller = $config['controller'];
-            isset($URI[2]) AND $action = $URI[2] OR $action = $config['action'];
+            isset($URI[2]) AND $action = lcfirst($URI[2]) OR $action = $config['action'];
             Config::setRoute(array(
                 'modul'=>$modul,
                 'controller'=>$controller,

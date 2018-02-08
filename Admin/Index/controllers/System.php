@@ -7,7 +7,7 @@ class System extends ControllerAbstract{
         parent::__construct();
     }
     //菜单
-    public function MenuAction(){
+    public function menuAction(){
         $model = M('Index','MenuModel');
         if(isset($_GET['page'])){
             $page = getInt('page');
@@ -22,7 +22,7 @@ class System extends ControllerAbstract{
         }
     }
     //修改状态
-    public function MenuStatusAction(){
+    public function menuStatusAction(){
         $id = getInt('id');
         $status = getInt('status');
         $json = array('code' => 1);
@@ -35,7 +35,7 @@ class System extends ControllerAbstract{
         echo json_encode($json);
     }
     //创建静态页
-    public function MakeMenuAction(){
+    public function makeMenuAction(){
         $json = array('code' => 1);
         $model = M('Index','MenuModel');
         $menu = $model->getMenu();
@@ -53,7 +53,7 @@ class System extends ControllerAbstract{
         exit;
     }
     //图标
-    function IconAction(){
+    function iconAction(){
         $this->display('icon.php');
     }
 }

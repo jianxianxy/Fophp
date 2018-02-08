@@ -6,7 +6,7 @@ class Index extends ControllerAbstract{
     public function __construct() {
         parent::__construct();
     }
-    function IndexAction(){
+    function indexAction(){
         $this->display('index.php');
     }
 }

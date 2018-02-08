@@ -7,18 +7,18 @@ class Article extends ControllerAbstract{
         parent::__construct();
     }
     //列表
-    function IndexAction(){
+    function indexAction(){
         $this->display('alist.php');
     }
     //添加
-    function AddAction(){
+    function addAction(){
         $this->display('aadd.php');
     }
-    function FeedbackAction(){
+    function feedbackAction(){
         $this->display('feedback.php');
     }
     //Ajax分页显示
-    function ListAction(){
+    function listAction(){
         $manage = <<<MAN
             <a style="text-decoration:none" onClick="article_stop(this,'10001')" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>
 			<a style="text-decoration:none" class="ml-5" onClick="article_edit('资讯编辑','article-add.html','10001')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a>

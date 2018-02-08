@@ -5,7 +5,7 @@ class Config
     public static $application = array(
         'modul' => 'Index',
         'controller' => 'Index',
-        'action'     => 'Index'
+        'action'     => 'index'
     );
     //数据库配置
     private static $gman_db = array(

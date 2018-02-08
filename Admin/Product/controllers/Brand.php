@@ -7,7 +7,7 @@ class Brand extends ControllerAbstract{
         parent::__construct();
     }
     //列表
-    function IndexAction(){
+    function indexAction(){
         $this->display('blist.php');
     }
 }
