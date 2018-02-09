@@ -21,17 +21,30 @@ class ModelAbstract extends Table{
     }
     
     //操作
-    public function tooIcon($data){
+    public function tooIcon($data,$mod = 0){
         $tool = array(
-            'on' => array('title'=>'启用','icon'=>'&#xe6e1;'),
-            'off' => array('title'=>'禁用','icon'=>'&#xe6dd;'),
+            'on' => array('title'=>'启用','icon'=>'&#xe605;'),
+            'off' => array('title'=>'禁用','icon'=>'&#xe60e;'),
             'del' => array('title'=>'删除','icon'=>'&#xe6e2;'),
             'edit' => array('title'=>'编辑','icon'=>'&#xe6df;'),
             'view' => array('title'=>'预览','icon'=>'&#xe695;')
         );
+        $button = array(
+            'on' => array('title'=>'启用','calss'=>''),
+            'off' => array('title'=>'禁用','calss'=>'layui-btn-danger'),
+            'del' => array('title'=>'删除','calss'=>'layui-btn-danger'),
+            'edit' => array('title'=>'编辑','calss'=>''),
+            'view' => array('title'=>'预览','calss'=>'')
+        );
         $ret = '';
-        foreach($data AS $key => $val){
-            $ret .= '<a class="ml-5" onclick="'.$val.'" href="javascript:;" title="'.$tool[$key]['title'].'"><i class="Hui-iconfont">'.$tool[$key]['icon'].'</i></a>';
+        if($mod == 0){
+            foreach($data AS $key => $val){
+                $ret .= '<a onclick="'.$val.'" class="layui-btn layui-btn-xs '.$button[$key]['calss'].'" lay-event="del">'.$button[$key]['title'].'</a>';
+            }
+        }else{
+            foreach($data AS $key => $val){
+                $ret .= '<a class="ml-5" onclick="'.$val.'" href="javascript:;" title="'.$tool[$key]['title'].'"><i class="Hui-iconfont">'.$tool[$key]['icon'].'</i></a>';
+            }
         }
         return $ret;
     }
