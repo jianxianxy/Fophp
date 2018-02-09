@@ -21,6 +21,9 @@ class Manager extends ControllerAbstract{
     }
     //添加
     function addAction(){
+        $cond = array('status:eq'=>1);
+        $role = M('User','RoleModel')->select($cond, $fields = '`id`,`role_name`');
+        $this->assign('role', $role);
         $this->display('madd.php');
     }
     //角色

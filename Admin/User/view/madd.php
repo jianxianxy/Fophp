@@ -8,54 +8,71 @@
     <div class="site-text site-block">
         <form class="layui-form" action="">
             <div class="layui-form-item">
-                <label class="layui-form-label">输入框</label>
-                <div class="layui-input-block">
-                    <input name="title" lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input" type="text">
+                <div class="layui-inline">
+                    <label class="layui-form-label">姓名</label>
+                    <div class="layui-input-inline">
+                        <input name="name" lay-verify="required" placeholder="请输入姓名" autocomplete="off" class="layui-input" type="text">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">工号</label>
+                    <div class="layui-input-inline">
+                        <input name="number" lay-verify="required" placeholder="请输入工号" autocomplete="off" class="layui-input" type="text">
+                    </div>
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">密码框</label>
-                <div class="layui-input-inline">
-                    <input name="password" lay-verify="required" lay-vertype="tips" placeholder="请输入密码" autocomplete="off" class="layui-input" type="password">
+                <div class="layui-inline">
+                    <label class="layui-form-label">手机</label>
+                    <div class="layui-input-inline">
+                        <input name="phone" lay-verify="required" placeholder="请输入手机" autocomplete="off" class="layui-input" type="text">
+                    </div>
                 </div>
-                <div class="layui-form-mid layui-word-aux">辅助文字</div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">选择框</label>
-                <div class="layui-input-block">
-                    <select name="city" lay-verify="required">
-                        <option value=""></option>
-                        <option value="0">北京</option>
-                        <option value="1">上海</option>
-                        <option value="2">广州</option>
-                        <option value="3">深圳</option>
-                        <option value="4">杭州</option>
-                    </select><div class="layui-unselect layui-form-select"><div class="layui-select-title"><input placeholder="请选择" value="" readonly="" class="layui-input layui-unselect" type="text"><i class="layui-edge"></i></div><dl class="layui-anim layui-anim-upbit"><dd lay-value="" class="layui-select-tips">请选择</dd><dd lay-value="0" class="">北京</dd><dd lay-value="1" class="">上海</dd><dd lay-value="2" class="">广州</dd><dd lay-value="3" class="">深圳</dd><dd lay-value="4" class="">杭州</dd></dl></div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">邮箱</label>
+                    <div class="layui-input-inline">
+                        <input name="email" lay-verify="required" placeholder="请输入邮箱" autocomplete="off" class="layui-input" type="text">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux"></div>
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">复选框</label>
-                <div class="layui-input-block">
-                    <input name="like[write]" title="写作" type="checkbox"><div class="layui-unselect layui-form-checkbox" lay-skin=""><span>写作</span><i class="layui-icon"></i></div>
-                    <input name="like[read]" title="阅读" checked="" type="checkbox"><div class="layui-unselect layui-form-checkbox layui-form-checked" lay-skin=""><span>阅读</span><i class="layui-icon"></i></div>
-                    <input name="like[dai]" title="发呆" type="checkbox"><div class="layui-unselect layui-form-checkbox" lay-skin=""><span>发呆</span><i class="layui-icon"></i></div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">角色</label>
+                    <div class="layui-input-inline">
+                        <select name="role_id" lay-verify="required">
+                            <?php foreach ($this->role AS $val): ?>
+                                <option value="<?php echo $val['id']; ?>"><?php echo $val['role_name']; ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>   
+                <div class="layui-inline">
+                    <label class="layui-form-label">密码</label>
+                    <div class="layui-input-inline">
+                        <input name="password" lay-verify="required" lay-vertype="tips" placeholder="请输入密码" autocomplete="off" class="layui-input" type="password">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux"></div>
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">开关</label>
-                <div class="layui-input-block">
-                    <input name="switch" lay-skin="switch" lay-text="ON|OFF" lay-filter="switchTest" value="1" type="checkbox"><div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>OFF</em><i></i></div>
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">单选框</label>
+                <label class="layui-form-label">性别</label>
                 <div class="layui-input-block">
                     <input name="sex" value="男" title="男" type="radio"><div class="layui-unselect layui-form-radio layui-form-radioed"><i class="layui-anim layui-icon layui-anim-scaleSpring"></i><div>男</div></div>
                     <input name="sex" value="女" title="女" checked="" type="radio"><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><div>女</div></div>
                 </div>
             </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">图片</label>
+                <div class="layui-input-block">
+                    <div class="layui-upload-drag" id="upImg">
+                        <i class="layui-icon">&#xe67c;</i>
+                        <p>上传图片</p>
+                    </div>
+                </div>
+            </div>
             <div class="layui-form-item layui-form-text">
-                <label class="layui-form-label">文本域</label>
+                <label class="layui-form-label">简介</label>
                 <div class="layui-input-block">
                     <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
                 </div>
@@ -75,7 +92,7 @@
 
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript">
-
+//图片上传
 layui.use('upload', function(){
     var upload = layui.upload;
     upload.render({
@@ -99,6 +116,7 @@ layui.use('upload', function(){
       }
     });
 });
+//表单
 layui.use('form', function(){
   var form = layui.form;
   //监听提交
