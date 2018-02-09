@@ -74,8 +74,4 @@ class Manager extends ControllerAbstract{
             $this->display('mrole_add.php');
         }
     }
-    //权限
-    function permissionAction(){
-        $this->display('mpermission.php');
-    }
 }
