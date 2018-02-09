@@ -82,13 +82,29 @@ function getip()
     $IP = ($user_IP) ? $user_IP : $_SERVER["REMOTE_ADDR"];
     return $IP;
 }
+//获取Int参数
 function getInt($name,$def = 0){
     return isset($_REQUEST[$name]) ? intval($_REQUEST[$name]) : $def; 
 }
-
+//获取表单数据
+function formData($col){
+    $data = array();
+    foreach($col AS $val){
+        if(isset($_POST[$val]) && !empty(trim($_POST[$val]))){
+            $data[$val] = trim($_POST[$val]);
+        }
+    }
+    return $data;
+}
 //选中 selected checked disabled
 function vTag($id,$arr,$tag = 'checked'){
-    if(in_array($id,$arr)){
-        echo $tag;
+    if(is_array($arr)){
+        if(in_array($id,$arr)){
+            echo $tag;
+        }
+    }else{
+        if($id == $arr){
+            echo $tag;
+        }
     }
 }

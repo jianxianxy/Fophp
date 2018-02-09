@@ -21,9 +21,38 @@ class Manager extends ControllerAbstract{
     }
     //添加
     function addAction(){
+        $id = getInt('id');
         $cond = array('status:eq'=>1);
         $role = M('User','RoleModel')->select($cond, $fields = '`id`,`role_name`');
         $this->assign('role', $role);
+        if(isset($_POST['name'])){
+            $json = array('code' => 1);
+            $col = array('name','number','password','phone','email','role_id','sex','picture','desc');
+            $data = formData($col);
+            if(isset($data['password'])){
+                $data['password'] = md5(md5($data['password']));
+            }
+            $manage = M('User','ManagerModel');
+            $res = false;
+            if($id){
+                $res = $manage->update($data,array('id:eq'=>$id));
+            }else{
+                $data['add_time'] = date('Y-m-d H:i:s');
+                $res = $manage->insert($data);
+            }
+            if($res){
+                $json['code'] = 0;
+            }
+            echo json_encode($json);
+            exit;
+        }
+        $action = '/User/Manager/add';
+        if($id){
+            $form = M('User','ManagerModel')->row($id);
+            $this->form($form);
+            $action .= '?id='.$id;
+        }
+        $this->assign('action', $action);
         $this->display('madd.php');
     }
     //角色

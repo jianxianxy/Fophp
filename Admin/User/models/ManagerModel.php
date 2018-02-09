@@ -15,8 +15,8 @@ class ManagerModel extends ModelAbstract{
         $arr = array(
             'on' => "tool_on(this,'{$col['id']}')",
             'off' => "tool_off(this,'{$col['id']}')",
-            'edit' => "tool_edit('编辑','/User/Manager/Edit/id/{$col['id']}'",
-            'view' => "tool_view('查看','/User/Manager/View/id/{$col['id']}'",
+            'edit' => "tool_edit('编辑','/User/Manager/add?id={$col['id']}')",
+            'view' => "tool_view('查看','/User/Manager/view?id={$col['id']}')",
         );
         if($col['status'] == 0){
             unset($arr['off']);

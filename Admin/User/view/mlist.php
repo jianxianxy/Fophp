@@ -55,13 +55,13 @@ layui.use('table', function(){
     ,cellMinWidth: 80
     ,cols: [[
       {type: 'checkbox'},
-      {field:'id', title:'ID', unresize: true, sort: true},
-      {field:'name', title:'姓名'},
-      {field:'number', title:'工号'},
+      {field:'id', title:'ID',width:80, unresize: true, sort: true},
+      {field:'name', title:'姓名',width:120},
+      {field:'number', title:'工号',width:120},
       {field:'email', title:'邮箱'},
       {field:'role_id', title:'角色'},
-      {field:'status', title:'状态'},
-      {field:'manage', title:'操作'},
+      {field:'status', title:'状态',width:80},
+      {field:'manage', title:'操作',width:120,align:'center'},
     ]]
   });
   //刷新
@@ -77,12 +77,7 @@ function tool_add(title,url){
     layer_show(title,url,800,620);
 }
 function tool_edit(title,url){
-	var index = layer.open({
-		type: 2,
-		title: title,
-		content: url
-	});
-	layer.full(index);
+	layer_show(title,url,800,620);
 }
 function tool_del(obj,id){
 	layer.confirm('确认要删除吗？',function(index){
