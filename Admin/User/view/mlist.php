@@ -98,7 +98,7 @@ function tool_del(obj,id){
 function tool_off(obj,id){
 	layer.confirm('确认要禁用吗？',function(flag){
 		if(flag){
-            $.post('/Index/System/MenuStatus',{"id":id,"status":0},function(ret){
+            $.post('/User/Manager/Status',{"id":id,"status":0},function(ret){
                 if(ret.code == 0){
                     fresh();
                     layer.msg('操作成功!',{icon: 6,time:1000});
@@ -112,7 +112,7 @@ function tool_off(obj,id){
 function tool_on(obj,id){
 	layer.confirm('确认要启用吗？',function(flag){
         if(flag){
-            $.post('/Index/System/MenuStatus',{"id":id,"status":1},function(ret){
+            $.post('/User/Manager/Status',{"id":id,"status":1},function(ret){
                 if(ret.code == 0){
                     fresh();
                     layer.msg('操作成功!',{icon: 6,time:1000});

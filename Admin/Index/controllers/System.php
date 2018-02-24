@@ -27,7 +27,7 @@ class System extends ControllerAbstract{
         $status = getInt('status');
         $json = array('code' => 1);
         if($id > 0){
-            $res = M('Index','Menu')->update(array('status'=>$status),array('id:eq'=>$id));
+            $res = M('Index','MenuModel')->update(array('status'=>$status),array('id:eq'=>$id));
             if($res){
                 $json['code'] = 0;
             }

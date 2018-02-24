@@ -13,13 +13,20 @@ class ModelAbstract extends Table{
         $start = ($page - 1) * $limit;
         $conditions['limit'] = $start.','.$limit;
         $data = $this->select($conditions);
+        $filter = $model->filterCol();
         foreach($data AS $key => $val){
+            foreach($filter AS $k => $v){
+                $data[$key][$k] = $v[$val[$k]];
+            }
             $data[$key]['manage'] = $this->tooIcon($model->getTool($val));
         }
         $info = array('code'=>0,'data'=>$data,'count'=>$count,'page'=>$page,'msg'=>'');
         return $info;
     }
-    
+    //列表字段过滤
+    public function filterCol(){
+        return array();
+    }
     //操作
     public function tooIcon($data,$mod = 0){
         $tool = array(

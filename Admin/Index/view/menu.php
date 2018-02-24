@@ -69,13 +69,13 @@ layui.use('table', function(){
     ,cellMinWidth: 80
     ,cols: [[
       {type: 'checkbox'},
-      {field:'id', title:'ID', unresize: true, sort: true},
+      {field:'id', title:'ID',width:80,unresize: true, sort: true},
       {field:'name', title:'名称'},
       {field:'pid', title:'上级ID'},
-      {field:'sort', title:'排序'},
+      {field:'sort', title:'排序',width:80},
       {field:'link', title:'连接'},
-      {field:'status', title:'状态'},
-      {field:'manage', title:'操作'},
+      {field:'status', title:'状态',width:80},
+      {field:'manage', title:'操作',width:200,align:'center'},
     ]]
   });
   //刷新
@@ -109,7 +109,7 @@ layui.use('upload', function(){
       }
     });
 });
-/*资讯-添加*/
+/*添加*/
 function tool_add(title,url){
 	var index = layer.open({
 		type: 2,
@@ -118,7 +118,7 @@ function tool_add(title,url){
 	});
 	layer.full(index);
 }
-/*资讯-编辑*/
+/*编辑*/
 function tool_edit(title,url){
 	var index = layer.open({
 		type: 2,
@@ -127,7 +127,7 @@ function tool_edit(title,url){
 	});
 	layer.full(index);
 }
-/*资讯-删除*/
+/*删除*/
 function tool_del(obj,id){
 	layer.confirm('确认要删除吗？',function(index){
 		$.ajax({
@@ -145,7 +145,7 @@ function tool_del(obj,id){
 	});
 }
 
-/*资讯-下架*/
+/*下架*/
 function tool_off(obj,id){
 	layer.confirm('确认要禁用吗？',function(flag){
 		if(flag){
@@ -161,7 +161,7 @@ function tool_off(obj,id){
 	});
 }
 
-/*资讯-发布*/
+/*发布*/
 function tool_on(obj,id){
 	layer.confirm('确认要启用吗？',function(flag){
         if(flag){
@@ -176,7 +176,7 @@ function tool_on(obj,id){
         }
 	});
 }
-/* 更才菜单 */
+/* 更新菜单 */
 function upMenu(){
     $.get('/Index/System/MakeMenu/',{},function(data){
         if(data.code == 0){

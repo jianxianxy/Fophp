@@ -11,6 +11,13 @@ class RoleModel extends ModelAbstract{
         $db_config = Config::getDbGman();
         parent::__construct($db_config, $this->_tableName);
     }
+    //列表需要过滤的字段
+    public function filterCol(){
+        $filter = array(
+            'status' => array(0 => '停用',1 => '启用')
+        );
+        return $filter;
+    }
     //操作
     public function getTool($col){
         $arr = array(

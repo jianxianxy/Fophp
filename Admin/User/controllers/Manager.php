@@ -106,4 +106,17 @@ class Manager extends ControllerAbstract{
             $this->display('mrole_add.php');
         }
     }
+    //状态
+    public function statusAction(){
+        $id = getInt('id');
+        $status = getInt('status');
+        $json = array('code' => 1);
+        if($id > 0){
+            $res = M('User','ManagerModel')->update(array('status'=>$status),array('id:eq'=>$id));
+            if($res){
+                $json['code'] = 0;
+            }
+        }
+        echo json_encode($json);
+    }
 }
