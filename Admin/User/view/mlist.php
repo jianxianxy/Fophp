@@ -25,8 +25,8 @@
 				<input type="text" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}'})" id="datemin" class="input-text Wdate" style="width:120px;">
 				-
 				<input type="text" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d'})" id="datemax" class="input-text Wdate" style="width:120px;">
-				<input type="text" class="input-text" style="width:120px" placeholder="输入管理员名称" id="Mname">
-				<button type="submit" class="btn btn-success"><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
+				<input type="text" class="input-text" style="width:120px" placeholder="输入管理员名称" id="name">
+				<button type="button" class="btn btn-success" onclick="tool_search();"><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
                 <button type="button" class="btn btn-success" onclick="tool_add('添加资讯','/User/Manager/Add')" ><i class="Hui-iconfont">&#xe600;</i> 添加</button>
 			</div>
 			<div class="mt-20">
@@ -65,14 +65,20 @@ layui.use('table', function(){
     ]]
   });
   //刷新
-  fresh = function(){
+  fresh = function(cond){
       var cpage = $(".layui-input").val();
       trobj.reload({
-        where: {},
+        where: cond,
         page: {curr:cpage}
       });
   }
 });
+//搜索
+function tool_search(){
+    var name = $("#name").val();
+    var data = {'name':name};
+    fresh(data);
+}
 function tool_add(title,url){
     layer_show(title,url,800,620);
 }
@@ -100,7 +106,7 @@ function tool_off(obj,id){
 		if(flag){
             $.post('/User/Manager/Status',{"id":id,"status":0},function(ret){
                 if(ret.code == 0){
-                    fresh();
+                    fresh({});
                     layer.msg('操作成功!',{icon: 6,time:1000});
                 }else{
                     layer.msg('操作失败!',{icon: 5,time:1000});
@@ -114,7 +120,7 @@ function tool_on(obj,id){
         if(flag){
             $.post('/User/Manager/Status',{"id":id,"status":1},function(ret){
                 if(ret.code == 0){
-                    fresh();
+                    fresh({});
                     layer.msg('操作成功!',{icon: 6,time:1000});
                 }else{
                     layer.msg('操作失败!',{icon: 5,time:1000});

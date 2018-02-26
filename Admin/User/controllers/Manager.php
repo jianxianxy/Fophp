@@ -12,7 +12,12 @@ class Manager extends ControllerAbstract{
             $model = M('User','ManagerModel');
             $page = getInt('page');
             $limit = getInt('limit');
-            $data = $model->ajaxPage($model,$page,$limit);
+            $name = getStr('name');
+            $conditions = array();
+            if($name){
+                $conditions['name:eq'] = $name;
+            }
+            $data = $model->ajaxPage($model,$page,$limit,$conditions);
             echo json_encode($data);
             exit;
         }else{

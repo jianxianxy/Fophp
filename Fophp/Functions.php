@@ -86,6 +86,9 @@ function getip()
 function getInt($name,$def = 0){
     return isset($_REQUEST[$name]) ? intval($_REQUEST[$name]) : $def; 
 }
+function getStr($name,$def = ''){
+    return isset($_REQUEST[$name]) ? trim($_REQUEST[$name]) : $def; 
+}
 //获取表单数据
 function formData($col){
     $data = array();
