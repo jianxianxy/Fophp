@@ -21,6 +21,39 @@ class System extends ControllerAbstract{
             $this->display('menu.php');
         }
     }
+    //添加
+    public function menuAddAction(){
+        $id = getInt('id');
+        $cond = array('pid:eq'=>0,'order'=>'`sort` ASC');
+        $menu = M('Index','MenuModel')->select($cond, $fields = '`id`,`name`');
+        $this->assign('menu', $menu);
+        if(isset($_POST['name'])){
+            $json = array('code' => 1);
+            $col = array('pid','name','sort','icon','link');
+            $data = formData($col);
+            $manage = M('Index','MenuModel');
+            $res = false;
+            if($id){
+                $res = $manage->update($data,array('id:eq'=>$id));
+            }else{
+                $data['add_time'] = date('Y-m-d H:i:s');
+                $res = $manage->insert($data);
+            }
+            if($res){
+                $json['code'] = 0;
+            }
+            echo json_encode($json);
+            exit;
+        }
+        $action = '/Index/System/MenuAdd';
+        if($id){
+            $form = M('Index','MenuModel')->row($id);
+            $this->form($form);
+            $action .= '?id='.$id;
+        }
+        $this->assign('action', $action);
+        $this->display('madd.php');
+    }
     //修改状态
     public function menuStatusAction(){
         $id = getInt('id');

@@ -38,9 +38,7 @@
 			</div>
 			<div class="cl pd-5 bg-1 bk-gray mt-20">
 				<span class="l">
-                <a href="javascript:;"  id="upImg" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe642;</i> 上传图片</a>
-				<a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
-				<a class="btn btn-primary radius" data-title="添加资讯" onclick="tool_add('添加资讯','/Cms/Article/Add')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加资讯</a>
+				<a class="btn btn-primary radius" data-title="添加菜单" onclick="tool_add('添加菜单','/Index/System/MenuAdd')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加菜单</a>
                 <a href="javascript:;" onclick="upMenu()" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe603;</i> 更新菜单</a>
 				</span>
 			</div>
@@ -88,63 +86,14 @@ layui.use('table', function(){
   }
 });
 
-layui.use('upload', function(){
-    var upload = layui.upload;
-    upload.render({
-      elem: '#upImg',
-      field: 'upfile',
-      url: '/lib/ueditor/1.4.3/php/controller.php?action=uploadimage',
-      size: 300, //限制文件大小，单位 KB
-      accept: 'file',
-      exts: "jpg|png|gif|bmp|jpeg|pdf",
-      done: function(res){
-        //如果上传失败
-        if(res.code > 0){
-          return layer.msg('上传失败');
-        }
-        //上传成功
-      },
-      error: function(){
-        return layer.msg('上传失败');
-      }
-    });
-});
 /*添加*/
 function tool_add(title,url){
-	var index = layer.open({
-		type: 2,
-		title: title,
-		content: url
-	});
-	layer.full(index);
+	layer_show(title,url,410,450);
 }
 /*编辑*/
 function tool_edit(title,url){
-	var index = layer.open({
-		type: 2,
-		title: title,
-		content: url
-	});
-	layer.full(index);
+	layer_show(title,url,410,450);
 }
-/*删除*/
-function tool_del(obj,id){
-	layer.confirm('确认要删除吗？',function(index){
-		$.ajax({
-			type: 'POST',
-			url: '',
-			dataType: 'json',
-			success: function(data){
-				$(obj).parents("tr").remove();
-				layer.msg('已删除!',{icon:1,time:1000});
-			},
-			error:function(data) {
-				console.log(data.msg);
-			},
-		});		
-	});
-}
-
 /*下架*/
 function tool_off(obj,id){
 	layer.confirm('确认要禁用吗？',function(flag){

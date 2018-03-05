@@ -33,7 +33,14 @@
 		<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
 	</nav>
 	<div class="Hui-article">
+        
 		<article class="cl pd-20">
+            <div class="cl pd-5 bg-1 bk-gray mt-20">
+                <span class="l">
+                    <a href="javascript:;"  id="upImg" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe642;</i> 上传图片</a>
+                    <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
+                </span>
+            </div>
 			<ul class="icon_lists">
                 <li>
                   <i class="layui-icon"></i>

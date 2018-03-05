@@ -42,7 +42,7 @@
                     <div class="layui-input-inline">
                         <select name="role_id" lay-verify="required">
                             <?php foreach ($this->role AS $val): ?>
-                                <option value="<?php echo $val['id']; ?>" <?php vTag(0,$this->field('role_id','return','selected'))?>><?php echo $val['role_name']; ?></option>
+                                <option value="<?php echo $val['id']; ?>" <?php vTag($val['id'],$this->field('role_id','return'),'selected')?>><?php echo $val['role_name']; ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
