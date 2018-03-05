@@ -125,8 +125,8 @@ layui.use('form', function(){
       $.post('<?php echo $this->action;?>',data.field,function(ret){
           if(ret.code == 0){
               layer.alert('保存成功',function(){
-                layer_close();
-              });
+              layer_close();
+            });
           }else{
             layer.alert(ret.msg, {icon: 5});
           }

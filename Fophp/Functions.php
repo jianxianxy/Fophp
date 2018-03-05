@@ -86,6 +86,7 @@ function getip()
 function getInt($name,$def = 0){
     return isset($_REQUEST[$name]) ? intval($_REQUEST[$name]) : $def; 
 }
+//获取String参数
 function getStr($name,$def = ''){
     return isset($_REQUEST[$name]) ? trim($_REQUEST[$name]) : $def; 
 }

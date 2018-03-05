@@ -69,7 +69,7 @@ layui.use('table', function(){
       {type: 'checkbox'},
       {field:'id', title:'ID',width:80,unresize: true, sort: true},
       {field:'name', title:'名称'},
-      {field:'pid', title:'上级ID'},
+      {field:'pid', title:'上级菜单'},
       {field:'sort', title:'排序',width:80},
       {field:'link', title:'连接'},
       {field:'status', title:'状态',width:80},

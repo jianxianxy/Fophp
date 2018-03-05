@@ -31,13 +31,12 @@ class System extends ControllerAbstract{
             $json = array('code' => 1);
             $col = array('pid','name','sort','icon','link');
             $data = formData($col);
-            $manage = M('Index','MenuModel');
+            $model = M('Index','MenuModel');
             $res = false;
             if($id){
-                $res = $manage->update($data,array('id:eq'=>$id));
-            }else{
-                $data['add_time'] = date('Y-m-d H:i:s');
-                $res = $manage->insert($data);
+                $res = $model->update($data,array('id:eq'=>$id));
+            }else{                
+                $res = $model->insert($data);
             }
             if($res){
                 $json['code'] = 0;

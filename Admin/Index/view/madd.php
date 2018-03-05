@@ -6,7 +6,7 @@
 <body>
 <article class="cl pd-10">
     <div class="page-container">
-        <form class="layui-form" action="">
+        <form class="layui-form" action="<?php echo $this->action;?>">
             <div class="layui-form-item">
                 <label class="layui-form-label">上级菜单</label>
                 <div class="layui-input-inline">

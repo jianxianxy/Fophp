@@ -24,7 +24,14 @@ class MenuModel extends ModelAbstract{
     }
     //列表需要过滤的字段
     public function filterCol(){
+        $cond = array('pid:eq'=>0);
+        $vArr = M('Index','MenuModel')->select($cond, $fields = '`id`,`name`');
+        $ret = array(0 => '');
+        foreach($vArr AS $val){
+            $ret[$val['id']] = $val['name'];
+        }
         $filter = array(
+            'pid' => $ret,
             'status' => array(0 => '停用',1 => '启用')
         );
         return $filter;
@@ -34,9 +41,7 @@ class MenuModel extends ModelAbstract{
         $arr = array(
             'on' => "tool_on(this,'{$col['id']}')",
             'off' => "tool_off(this,'{$col['id']}')",
-            'del' => "tool_del(this,'{$col['id']}')",
-            'edit' => "tool_edit('编辑','/Index/System/MenuEdit/id/{$col['id']}'",
-            'view' => "tool_view('查看','/Index/System/MenuEdit/id/{$col['id']}'",
+            'edit' => "tool_edit('编辑菜单','/Index/System/MenuAdd?id={$col['id']}')",
         );
         if($col['status'] == 0){
             unset($arr['off']);

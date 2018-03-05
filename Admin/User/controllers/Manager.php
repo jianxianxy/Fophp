@@ -31,7 +31,7 @@ class Manager extends ControllerAbstract{
         $role = M('User','RoleModel')->select($cond, $fields = '`id`,`role_name`');
         $this->assign('role', $role);
         if(isset($_POST['name'])){
-            $json = array('code' => 1);
+            $json = array('code' => 1,'msg'=>'保存失败');
             $col = array('name','number','password','phone','email','role_id','sex','picture','desc');
             $data = formData($col);
             if(isset($data['password'])){

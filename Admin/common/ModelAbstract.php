@@ -13,10 +13,13 @@ class ModelAbstract extends Table{
         $start = ($page - 1) * $limit;
         $conditions['limit'] = $start.','.$limit;
         $data = $this->select($conditions);
+        //需要过滤重新赋值的字段
         $filter = $model->filterCol();
         foreach($data AS $key => $val){
             foreach($filter AS $k => $v){
-                $data[$key][$k] = $v[$val[$k]];
+                if(isset($v[$val[$k]])){
+                    $data[$key][$k] = $v[$val[$k]];
+                }
             }
             $data[$key]['manage'] = $this->tooIcon($model->getTool($val));
         }
