@@ -30,7 +30,7 @@ class Loader
         {
             return self::_get($mod);
         }
-        $file = M.'/'.$moduleName.'/models/'.$fileName.'.php';
+        $file = APP.'/'.$moduleName.'/models/'.$fileName.'.php';
 		include($file);
         $fileObject = new $fileName;
         self::_set($mod,$fileObject);

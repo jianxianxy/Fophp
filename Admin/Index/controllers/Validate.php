@@ -32,7 +32,7 @@ class Validate{
 		// 验证码使用随机字体 2 4 6 7  ok 1 3 5
 		$arr = array(1,3,5);
 		shuffle($arr);   //打乱数组顺序
-		$ttf = APP_PATH.'/static/font/validate.ttf';
+		$ttf = PATH.'/static/font/validate.ttf';
 		if ($useNoise) {
 			// 绘杂点
 			for($i = 0; $i < 6; $i++){

@@ -9,7 +9,7 @@ class Fophp
     {
         //路由解析
         self::parseRoute();
-        $file = M.'/'.MODULE.'/controllers/'.CONTROLLER.'.php';
+        $file = APP.'/'.MODULE.'/controllers/'.CONTROLLER.'.php';
         if(file_exists($file))
         {
             include($file);//加载控制器

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<?php include(LAY.'/_head.html');?>
+<?php include(APP.'/layout/_head.html');?>
 </head>
 <body>
 <div class="pd-20">
@@ -29,7 +29,7 @@
   </form>
 </div>
 <!--_footer 作为公共模版分离出去--> 
-<?php include(LAY.'/_foot.html');?>
+<?php include(APP.'/layout/_foot.html');?>
 <!--/_footer /作为公共模版分离出去--> 
 
 <!--请在下方写此页面业务相关的脚本--> 

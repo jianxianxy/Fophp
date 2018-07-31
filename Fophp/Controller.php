@@ -33,7 +33,7 @@ class Controller
     //调用模板
     public function display($view)
     {
-        $file = M.'/'.MODULE.'/view/'.$view;
+        $file = APP.'/'.MODULE.'/view/'.$view;
         include($file);
     }
 }

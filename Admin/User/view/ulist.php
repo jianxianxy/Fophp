@@ -1,15 +1,15 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<?php include(LAY.'/_head.html');?>
+<?php include(APP.'/layout/_head.html');?>
 </head>
 <body>
 <!--_header 作为公共模版分离出去-->
-<?php include(LAY.'/_top.html');?>
+<?php include(APP.'/layout/_top.html');?>
 <!--/_header 作为公共模版分离出去-->
 
 <!--_menu 作为公共模版分离出去-->
-<?php include(LAY.'/_menu.html');?>
+<?php include(APP.'/layout/_menu.html');?>
 <!--/_menu 作为公共模版分离出去-->
 
 <section class="Hui-article-box">
@@ -31,43 +31,14 @@
                 <span class="r">共有数据：<strong>88</strong> 条</span> 
             </div>
 			<div class="mt-20">
-				<table class="table table-border table-bordered table-hover table-bg table-sort">
-					<thead>
-						<tr class="text-c">
-							<th width="25"><input type="checkbox" name="" value=""></th>
-							<th width="80">ID</th>
-							<th width="100">用户名</th>
-							<th width="40">性别</th>
-							<th width="90">手机</th>
-							<th width="150">邮箱</th>
-							<th width="">地址</th>
-							<th width="130">加入时间</th>
-							<th width="70">状态</th>
-							<th width="100">操作</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr class="text-c">
-							<td><input type="checkbox" value="1" name=""></td>
-							<td>1</td>
-							<td><u style="cursor:pointer" class="text-primary" onclick="member_show('张三','member-show.html','10001','360','400')">张三</u></td>
-							<td>男</td>
-							<td>13000000000</td>
-							<td>admin@mail.com</td>
-							<td class="text-l">北京市 海淀区</td>
-							<td>2014-6-11 11:11:42</td>
-							<td class="td-status"><span class="label label-success radius">已启用</span></td>
-							<td class="td-manage"><a style="text-decoration:none" onClick="member_stop(this,'10001')" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a> <a title="编辑" href="javascript:;" onclick="member_edit('编辑','member-add.html','4','','510')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="change_password('修改密码','change-password.html','10001','600','270')" href="javascript:;" title="修改密码"><i class="Hui-iconfont">&#xe63f;</i></a> <a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-						</tr>
-					</tbody>
-				</table>
+				<table id="lay_table" lay-filter="lay_table"></table>
 			</div>
 		</article>
 	</div>
 </section>
 
 <!--_footer 作为公共模版分离出去-->
-<?php include(LAY.'/_foot.html');?>
+<?php include(APP.'/layout/_foot.html');?>
 <!--/_footer /作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
@@ -75,24 +46,37 @@
 <script type="text/javascript" src="/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="/lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
-$(function(){
-	$('.table-sort').dataTable({
-		"aaSorting": [[ 1, "desc" ]],//默认第几个排序
-		"bStateSave": true,//状态保存
-		"aoColumnDefs": [
-		  //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
-		  {"orderable":false,"aTargets":[0,8,9]}// 制定列不参与排序
-		]
-	});
-	$('.table-sort tbody').on( 'click', 'tr', function () {
-		if ( $(this).hasClass('selected') ) {
-			$(this).removeClass('selected');
-		}
-		else {
-			table.$('tr.selected').removeClass('selected');
-			$(this).addClass('selected');
-		}
-	});
+layui.use('table', function(){
+  var table = layui.table;
+  var trobj = table.render({
+    elem: '#lay_table'
+    ,url: '/User/User/Index'
+    ,page: { //详细参数可参考 laypage 组件文档
+      curr: 1
+      ,layout: ['limit', 'prev', 'page', 'next', 'count','skip'] //自定义分页布局
+    }
+    ,cellMinWidth: 80
+    ,cols: [[
+      {type: 'checkbox'},
+      {field:'id', title:'ID',width:80, unresize: true, sort: true},
+      {field:'login_user', title:'帐号',width:120},
+      {field:'name', title:'姓名',width:120},
+      {field:'phone', title:'手机'},
+      {field:'email', title:'邮箱'},
+      {field:'sex', title:'性别',width:80},
+      {field:'status', title:'状态',width:80},
+      {field:'add_time', title:'加入时间',width:180},
+      {field:'manage', title:'操作',width:120,align:'center'},
+    ]]
+  });
+  //刷新
+  fresh = function(cond){
+      var cpage = $(".layui-input").val();
+      trobj.reload({
+        where: cond,
+        page: {curr:cpage}
+      });
+  };
 });
 /*用户-添加*/
 function member_add(title,url,w,h){

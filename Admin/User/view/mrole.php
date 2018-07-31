@@ -1,15 +1,15 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<?php include(LAY.'/_head.html');?>
+<?php include(APP.'/layout/_head.html');?>
 </head>
 <body>
 <!--_header 作为公共模版分离出去-->
-<?php include(LAY.'/_top.html');?>
+<?php include(APP.'/layout/_top.html');?>
 <!--/_header 作为公共模版分离出去-->
 
 <!--_menu 作为公共模版分离出去-->
-<?php include(LAY.'/_menu.html');?>
+<?php include(APP.'/layout/_menu.html');?>
 <!--/_menu 作为公共模版分离出去-->
 
 <section class="Hui-article-box">
@@ -31,7 +31,7 @@
 </section>
 
 <!--_footer 作为公共模版分离出去-->
-<?php include(LAY.'/_foot.html');?>
+<?php include(APP.'/layout/_foot.html');?>
 <!--/_footer /作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
