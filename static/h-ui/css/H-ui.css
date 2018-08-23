@@ -1092,7 +1092,7 @@ table.dataTable thead .sorting_desc {background-image:url(../images/dataTable/so
 */
 
 input[type="radio"],input[type="checkbox"] {line-height: normal; margin-top:-4px}
-.check-box,.radio-box{ display:inline-block; box-sizing:border-box; cursor:pointer; position:relative; padding-left:30px; padding-right:20px}
+.check-box,.radio-box{ display:inline-block; box-sizing:border-box; cursor:pointer; position:relative; padding-right:20px}
 .icheckbox,
 .icheckbox-red,
 .icheckbox-green,

@@ -1,4 +1,7 @@
 <?php
+/**
+ * 配置信息
+ */
 class Config
 {
     //默认路由配置
@@ -15,6 +18,10 @@ class Config
             'password'  => '',
             'dbname'    => 'gman_db',
             'charset'   => 'utf8'
+    );
+    //Redis 配置
+    private static $redis_cache = array(
+        'db0' => array('master' => '10.102.36.153:26379:tttt'),
     );
     //路由类型配置
     public static $route = array(

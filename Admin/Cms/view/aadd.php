@@ -19,9 +19,9 @@
 				<input type="text" class="input-text" value="" placeholder="" id="" name="">
 			</div>
 		</div>
-		<div class="row cl">
+        <div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>分类栏目：</label>
-			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+			<div class="formControls col-xs-8 col-sm-2"> <span class="select-box">
 				<select name="" class="select">
 					<option value="0">一级分类</option>
 					<option value="1">一级分类</option>
@@ -29,20 +29,21 @@
 					<option value="12">├二级分类</option>
 					<option value="13">├二级分类</option>
 				</select>
-				</span> </div>
-		</div>
-		<div class="row cl">
+				</span>
+            </div>
+        </div>
+        <div class="row cl">    
 			<label class="form-label col-xs-4 col-sm-2">排序值：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="0" placeholder="" id="" name="">
+			<div class="formControls col-xs-8 col-sm-1">
+				<input name="" type="text" class="input-text" value="">
 			</div>
-		</div>
+       </div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">允许评论：</label>
-			<div class="formControls col-xs-8 col-sm-9 skin-minimal">
+			<div class="formControls col-xs-8 col-sm-2 skin-minimal">
 				<div class="check-box">
 					<input type="checkbox" id="checkbox-1">
-					<label for="checkbox-1">&nbsp;</label>
+					<label for="checkbox-1">&nbsp;允许</label>
 				</div>
 			</div>
 		</div>
