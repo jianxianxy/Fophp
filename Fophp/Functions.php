@@ -94,8 +94,12 @@ function getStr($name,$def = ''){
 function formData($col){
     $data = array();
     foreach($col AS $val){
-        if(isset($_POST[$val]) && !empty(trim($_POST[$val]))){
-            $data[$val] = trim($_POST[$val]);
+        if(isset($_POST[$val]) && !empty($_POST[$val])){
+            if(is_array($_POST[$val])){
+                $data[$val] = $_POST[$val];
+            }else{
+                $data[$val] = trim($_POST[$val]);
+            }            
         }
     }
     return $data;
