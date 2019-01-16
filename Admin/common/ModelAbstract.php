@@ -46,14 +46,16 @@ class ModelAbstract extends Table{
         $button = array(
             'on' => array('title'=>'启用','calss'=>''),
             'off' => array('title'=>'禁用','calss'=>'layui-btn-danger'),
+            'app' => array('title'=>'审核','calss'=>'layui-btn-warm'),
             'del' => array('title'=>'删除','calss'=>'layui-btn-danger'),
             'edit' => array('title'=>'编辑','calss'=>''),
-            'view' => array('title'=>'预览','calss'=>'')
+            'view' => array('title'=>'预览','calss'=>'layui-btn-normal')
         );
         //图标模式
         $tool = array(
-            'on' => array('title'=>'启用','icon'=>'&#xe605;'),
-            'off' => array('title'=>'禁用','icon'=>'&#xe60e;'),
+            'on' => array('title'=>'启用','icon'=>'&#xe6e1;'),
+            'off' => array('title'=>'禁用','icon'=>'&#xe6dd;'),
+            'app' => array('title'=>'审核','icon'=>'&#xe603;'),
             'del' => array('title'=>'删除','icon'=>'&#xe6e2;'),
             'edit' => array('title'=>'编辑','icon'=>'&#xe6df;'),
             'view' => array('title'=>'预览','icon'=>'&#xe695;')
