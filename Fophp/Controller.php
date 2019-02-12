@@ -36,4 +36,8 @@ class Controller
         $file = APP.'/'.MODULE.'/view/'.$view;
         include($file);
     }
+    //Json格式返回
+    public function printJson($data,$code = 0){
+        echo json_encode(array('code'=>$code,'data'=>$data));
+    }
 }

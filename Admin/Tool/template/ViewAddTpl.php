@@ -8,16 +8,6 @@
     <div class="page-container">
         <form class="layui-form" action="<?php echo $this->action;?>">
             <div class="layui-form-item">
-                <label class="layui-form-label">上级菜单</label>
-                <div class="layui-input-inline">
-                    <select name="pid" lay-verify="required">
-                        <?php foreach ($this->menu AS $val): ?>
-                            <option value="<?php echo $val['id']; ?>" <?php vTag($val['id'],$this->field('pid','return'),'selected')?>><?php echo $val['name']; ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-            </div>
-            <div class="layui-form-item">
                 <label class="layui-form-label">菜单名称</label>
                 <div class="layui-input-inline">
                     <input name="name" value="<?php $this->field('name');?>" lay-verify="required" placeholder="请输入名称" class="layui-input" type="text">

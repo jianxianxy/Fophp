@@ -161,6 +161,20 @@ class Table
         return $this->_db->affected_rows;
 	}
 	
+    public function fetchAll($query)
+    {
+        $data = array();
+        while($row = mysqli_fetch_assoc($query))
+        {
+            $data[] = $row;
+        }
+        return $data;
+    }
+    public function fetchRow($query)
+    {
+        return mysqli_fetch_assoc($query);
+    }
+    
 	/**
 	 * 生成字段查询SQL
 	 * 
@@ -310,22 +324,9 @@ class Table
 			return " LIMIT {$limit}";
 		}
 	}
-	private function fetchAll($query)
-    {
-        $data = array();
-        while($row = mysqli_fetch_assoc($query))
-        {
-            $data[] = $row;
-        }
-        return $data;
-    }
-    private function fetchRow($query)
-    {
-        return mysqli_fetch_assoc($query);
-    }
+	
     /**
 	 * sql where 条件
-	 *
 	 * @var array
 	 */
 	static private $_op = array(

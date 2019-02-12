@@ -76,7 +76,7 @@ class System extends ControllerAbstract{
         $this->display('_menu.php');
         $html = ob_get_contents();
         ob_end_clean();
-        $file = M.'/layout/_menu.html';
+        $file = APP.'/layout/_menu.html';
         $r = file_put_contents($file, $html);
         if($r){
             $json['code'] = 0;
