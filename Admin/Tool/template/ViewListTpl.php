@@ -59,7 +59,7 @@ layui.use('table', function(){
   var table = layui.table;
   var trobj = table.render({
     elem: '#lay_table'
-    ,url: '/Index/System/Menu'
+    ,url: '/{module}/{modelName}/Index'
     ,page: { //详细参数可参考 laypage 组件文档
       curr: 1
       ,layout: ['limit', 'prev', 'page', 'next', 'count','skip'] //自定义分页布局
@@ -95,10 +95,10 @@ function tool_edit(title,url){
 	layer_show(title,url,410,450);
 }
 /*下架*/
-function tool_off(obj,id){
+function tool_del(obj,id){
 	layer.confirm('确认要禁用吗？',function(flag){
 		if(flag){
-            $.post('/Index/System/MenuStatus',{"id":id,"status":0},function(ret){
+            $.post('/{module}/{modelName}/del',{"id":id,"status":0},function(ret){
                 if(ret.code == 0){
                     fresh();
                     layer.msg('操作成功!',{icon: 6,time:1000});
@@ -108,32 +108,6 @@ function tool_off(obj,id){
             },"json");
         }
 	});
-}
-
-/*发布*/
-function tool_on(obj,id){
-	layer.confirm('确认要启用吗？',function(flag){
-        if(flag){
-            $.post('/Index/System/MenuStatus',{"id":id,"status":1},function(ret){
-                if(ret.code == 0){
-                    fresh();
-                    layer.msg('操作成功!',{icon: 6,time:1000});
-                }else{
-                    layer.msg('操作失败!',{icon: 5,time:1000});
-                }
-            },"json");
-        }
-	});
-}
-/* 更新菜单 */
-function upMenu(){
-    $.get('/Index/System/MakeMenu/',{},function(data){
-        if(data.code == 0){
-            layer.msg('生成成功!',{icon: 6,time:1000});
-        }else{
-            layer.msg('生成失败!',{icon: 5,time:1000});
-        }
-    },"json");
 }
 </script>
 <!--/请在上方写此页面业务相关的脚本-->

@@ -48,4 +48,17 @@ class System extends ControllerAbstract{
         $this->assign('action', $action);
         $this->display('add.php');
     }
+    //修改状态
+    public function delAction(){
+        $id = getInt('id');
+        $status = getInt('status');
+        $json = array('code' => 1);
+        if($id > 0){
+            $res = M('{module}','{modelName}')->update(array('status'=>$status),array('id:eq'=>$id));
+            if($res){
+                $json['code'] = 0;
+            }
+        }
+        echo json_encode($json);
+    }
 }
