@@ -3,13 +3,13 @@
 <head>
 <?php include(APP.'/layout/_head.html');?>
 <style>
-.icon_lists li {
+#icon_show li {
 	float: left;
 	width: 120px;
 	height: 150px;
 	text-align: center;
 }
-.layui-icon {
+#icon_show .layui-icon {
     display: inline-block;
     font-size: 36px;
 }
@@ -25,23 +25,23 @@
 <!--/_menu 作为公共模版分离出去-->
 
 <section class="Hui-article-box">
-	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页
+	<nav class="breadcrumb"><i class="layui-icon">&#xe68e;</i> 首页
 		<span class="c-gray en">&gt;</span>
 		系统管理
 		<span class="c-gray en">&gt;</span>
 		基本设置
-		<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+		<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="layui-icon">&#x1002;</i></a>
 	</nav>
 	<div class="Hui-article">
         
 		<article class="cl pd-20">
             <div class="cl pd-5 bg-1 bk-gray mt-20">
                 <span class="l">
-                    <a href="javascript:;"  id="upImg" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe642;</i> 上传图片</a>
-                    <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
+                    <a href="javascript:;"  id="upImg" class="btn btn-primary radius"><i class="layui-icon">&#xe681;</i> 上传图片</a>
+                    <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="layui-icon">&#xe640;</i> 批量删除</a>
                 </span>
             </div>
-			<ul class="icon_lists">
+			<ul class="icon_lists" id="icon_show">
                 <li>
                   <i class="layui-icon"></i>
                   <div class="name">主页</div>

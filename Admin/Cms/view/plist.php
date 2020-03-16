@@ -13,7 +13,7 @@
 <!--/_menu 作为公共模版分离出去-->
 
 <section class="Hui-article-box">
-	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 图片管理 <span class="c-gray en">&gt;</span> 图片列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+	<nav class="breadcrumb"><i class="layui-icon">&#xe68e;</i> 首页 <span class="c-gray en">&gt;</span> 图片管理 <span class="c-gray en">&gt;</span> 图片列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="layui-icon">&#x1002;</i></a></nav>
 	<div class="Hui-article">
 		<article class="cl pd-20">
 			<div> 日期范围：
@@ -21,12 +21,12 @@
 				-
 				<input type="text" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d'})" id="logmax" class="input-text Wdate" style="width:120px;">
 				<input type="text" name="" id="" placeholder=" 图片名称" style="width:250px" class="input-text">
-				<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜图片</button>
+				<button name="" id="" class="btn btn-success" type="submit"><i class="layui-icon">&#xe615;</i> 搜图片</button>
 			</div>
 			<div class="cl pd-5 bg-1 bk-gray mt-20"> 
                 <span class="l">
-                    <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> 
-                    <a class="btn btn-primary radius" onclick="picture_add('添加图片','/Cms/Picture/Add')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加图片</a>
+                    <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="layui-icon">&#xe640;</i> 批量删除</a> 
+                    <a class="btn btn-primary radius" onclick="picture_add('添加图片','/Cms/Picture/Add')" href="javascript:;"><i class="layui-icon">&#xe654;</i> 添加图片</a>
                 </span> 
                 <span class="r">共有数据：<strong>54</strong> 条</span> </div>
 			<div class="mt-20">
@@ -54,7 +54,7 @@
 							<td class="text-c">标签</td>
 							<td>2014-6-11 11:11:42</td>
 							<td class="td-status"><span class="label label-success radius">已发布</span></td>
-							<td class="td-manage"><a style="text-decoration:none" onClick="picture_stop(this,'10001')" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a> <a style="text-decoration:none" class="ml-5" onClick="picture_edit('图库编辑','picture-add.html','10001')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="picture_del(this,'10001')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+							<td class="td-manage"><a style="text-decoration:none" onClick="picture_stop(this,'10001')" href="javascript:;" title="下架"><i class="layui-icon">&#xe6de;</i></a> <a style="text-decoration:none" class="ml-5" onClick="picture_edit('图库编辑','picture-add.html','10001')" href="javascript:;" title="编辑"><i class="layui-icon">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="picture_del(this,'10001')" href="javascript:;" title="删除"><i class="layui-icon">&#xe640;</i></a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -120,7 +120,7 @@ function picture_shenhe(obj,id){
 /*图片-下架*/
 function picture_stop(obj,id){
 	layer.confirm('确认要下架吗？',function(index){
-		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="picture_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>');
+		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="picture_start(this,id)" href="javascript:;" title="发布"><i class="layui-icon">&#xe603;</i></a>');
 		$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已下架</span>');
 		$(obj).remove();
 		layer.msg('已下架!',{icon: 5,time:1000});
@@ -130,7 +130,7 @@ function picture_stop(obj,id){
 /*图片-发布*/
 function picture_start(obj,id){
 	layer.confirm('确认要发布吗？',function(index){
-		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="picture_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>');
+		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="picture_stop(this,id)" href="javascript:;" title="下架"><i class="layui-icon">&#xe6de;</i></a>');
 		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
 		$(obj).remove();
 		layer.msg('已发布!',{icon: 6,time:1000});

@@ -20,9 +20,9 @@ class Article extends ControllerAbstract{
     //Ajax分页显示
     function listAction(){
         $manage = <<<MAN
-            <a style="text-decoration:none" onClick="article_stop(this,'10001')" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>
-			<a style="text-decoration:none" class="ml-5" onClick="article_edit('资讯编辑','article-add.html','10001')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a>
-			<a style="text-decoration:none" class="ml-5" onClick="article_del(this,'10001')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a>
+            <a style="text-decoration:none" onClick="article_stop(this,'10001')" href="javascript:;" title="下架"><i class="layui-icon">&#xe6de;</i></a>
+			<a style="text-decoration:none" class="ml-5" onClick="article_edit('资讯编辑','article-add.html','10001')" href="javascript:;" title="编辑"><i class="layui-icon">&#xe6df;</i></a>
+			<a style="text-decoration:none" class="ml-5" onClick="article_del(this,'10001')" href="javascript:;" title="删除"><i class="layui-icon">&#xe640;</i></a>
 MAN;
         $lists = array(
             array('id'=>1001,'title'=>'资讯标题','category'=>'行业动态','form' => 'Hui','create_time' => '2014-6-11','status' => '<span class="label label-success radius">草稿</span>','manage' => $manage),

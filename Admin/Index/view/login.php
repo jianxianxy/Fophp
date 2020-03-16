@@ -9,13 +9,13 @@
     <div id="loginform" class="loginBox">
         <form class="form form-horizontal" action="index.html" method="post">
             <div class="row cl">
-                <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60d;</i></label>
+                <label class="form-label col-xs-3"><i class="layui-icon">&#xe60d;</i></label>
                 <div class="formControls col-xs-3">
                     <input id="" name="" type="text" placeholder="账户" class="input-text size-L">
                 </div>
             </div>
             <div class="row cl">
-                <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60e;</i></label>
+                <label class="form-label col-xs-3"><i class="layui-icon">&#xe60e;</i></label>
                 <div class="formControls col-xs-3">
                     <input id="" name="" type="password" placeholder="密码" class="input-text size-L">
                 </div>

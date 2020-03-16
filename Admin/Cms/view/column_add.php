@@ -31,7 +31,7 @@
         <div class="layui-form-item">
             <div class="layui-input-block">
                 <input name="id" value="<?php $this->field('id');?>" autocomplete="off" class="layui-input" type="hidden">
-                <button lay-submit="" lay-filter="subform" class="btn btn-primary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存</button>
+                <button lay-submit="" lay-filter="subform" class="btn btn-primary radius" type="button"><i class="layui-icon">&#xe632;</i> 保存</button>
                 <button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
             </div>
         </div>

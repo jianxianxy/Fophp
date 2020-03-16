@@ -13,13 +13,13 @@
 <!--/_menu 作为公共模版分离出去-->
 
 <section class="Hui-article-box">
-	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页
+	<nav class="breadcrumb"><i class="layui-icon">&#xe68e;</i> 首页
 		<span class="c-gray en">&gt;</span>
 		资讯管理
 		<span class="c-gray en">&gt;</span>
 		资讯列表
 		<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.reload();" title="刷新" >
-            <i class="Hui-iconfont">&#xe68f;</i>
+            <i class="layui-icon">&#x1002;</i>
         </a>
 	</nav>
 	<div class="Hui-article">
@@ -34,12 +34,12 @@
 				</span>
 				名称：
 				<input type="text" name="" id="" placeholder=" 名称" style="width:150px" class="input-text">
-				<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+				<button name="" id="" class="btn btn-success" type="submit"><i class="layui-icon">&#xe615;</i> 搜索</button>
 			</div>
 			<div class="cl pd-5 bg-1 bk-gray mt-20">
 				<span class="l">
-				<a class="btn btn-primary radius" data-title="添加菜单" onclick="tool_add('添加菜单','/Index/System/MenuAdd')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加菜单</a>
-                <a href="javascript:;" onclick="upMenu()" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe603;</i> 更新菜单</a>
+				<a class="btn btn-primary radius" data-title="添加菜单" onclick="tool_add('添加菜单','/Index/System/MenuAdd')" href="javascript:;"><i class="layui-icon">&#xe654;</i> 添加菜单</a>
+                <a href="javascript:;" onclick="upMenu()" class="btn btn-primary radius"><i class="layui-icon">&#xe603;</i> 更新菜单</a>
 				</span>
 			</div>
 			<div class="mt-20">

@@ -13,7 +13,7 @@
 <!--/_menu 作为公共模版分离出去-->
 
 <section class="Hui-article-box">
-    <nav class="breadcrumb"><i class="Hui-iconfont"></i> <a href="/" class="maincolor">首页</a> 
+    <nav class="breadcrumb"><i class="layui-icon"></i> <a href="/" class="maincolor">首页</a> 
         <span class="c-999 en">&gt;</span>
         <span class="c-666">智能工程</span> 
     </nav>

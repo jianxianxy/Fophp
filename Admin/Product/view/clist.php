@@ -14,7 +14,7 @@
 <!--/_menu 作为公共模版分离出去-->
 
 <section class="Hui-article-box">
-	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 产品管理 <span class="c-gray en">&gt;</span> 产品列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+	<nav class="breadcrumb"><i class="layui-icon">&#xe68e;</i> 首页 <span class="c-gray en">&gt;</span> 产品管理 <span class="c-gray en">&gt;</span> 产品列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="layui-icon">&#x1002;</i></a></nav>
 	<div class="Hui-article">
 		<div class="pos-a" style="width:350px;left:0;top:0; bottom:0; height:100%; border-right:1px solid #e5e5e5; background-color:#f5f5f5">
 			<ul id="treeDemo" class="ztree">
@@ -27,7 +27,7 @@
                         <label class="form-label col-xs-4 col-sm-2">搜索：</label>
                         <div class="formControls col-xs-8 col-sm-9">
                             <input type="text" id="catName" placeholder=" 产品名称" style="width:100px" class="input-text">
-                            <button class="btn btn-success" type="button"><i class="Hui-iconfont">&#xe665;</i> 搜产品</button>
+                            <button class="btn btn-success" type="button"><i class="layui-icon">&#xe615;</i> 搜产品</button>
                         </div>
                     </div>
                     <div class="row cl">
@@ -52,7 +52,7 @@
                     </div>
                     <div class="row cl">
                         <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
-                            <button onClick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存</button>
+                            <button onClick="article_save();" class="btn btn-secondary radius" type="button"><i class="layui-icon">&#xe632;</i> 保存</button>
                             <button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
                         </div>
                     </div>

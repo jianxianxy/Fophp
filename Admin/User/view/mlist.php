@@ -13,11 +13,11 @@
 <!--/_menu 作为公共模版分离出去-->
 
 <section class="Hui-article-box">
-	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页
+	<nav class="breadcrumb"><i class="layui-icon">&#xe68e;</i> 首页
 		<span class="c-gray en">&gt;</span>
 		管理员管理
 		<span class="c-gray en">&gt;</span>
-		管理员列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a> 
+		管理员列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="layui-icon">&#x1002;</i></a> 
     </nav>
 	<div class="Hui-article">
 		<article class="cl pd-20">
@@ -26,8 +26,8 @@
 				-
 				<input type="text" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d'})" id="datemax" class="input-text Wdate" style="width:120px;">
 				<input type="text" class="input-text" style="width:120px" placeholder="输入管理员名称" id="name">
-				<button type="button" class="btn btn-success" onclick="tool_search();"><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
-                <button type="button" class="btn btn-success" onclick="tool_add('添加资讯','/User/Manager/Add')" ><i class="Hui-iconfont">&#xe600;</i> 添加</button>
+				<button type="button" class="btn btn-success" onclick="tool_search();"><i class="layui-icon">&#xe615;</i> 搜用户</button>
+                <button type="button" class="btn btn-success" onclick="tool_add('添加资讯','/User/Manager/Add')" ><i class="layui-icon">&#xe654;</i> 添加</button>
 			</div>
 			<div class="mt-20">
                 <table id="lay_table" lay-filter="lay_table"></table>

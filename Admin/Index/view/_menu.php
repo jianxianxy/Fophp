@@ -3,7 +3,7 @@
     <div class="menu_dropdown bk_2" id="Amenu">
         <?php foreach($this->menu AS $val):?>
         <dl>
-            <dt><i class="Hui-iconfont"><?php echo $val['icon'];?></i> <?php echo $val['name'];?><i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dt><i class="layui-icon"><?php echo $val['icon'];?></i> <?php echo $val['name'];?></dt>
             <dd>
                 <ul>
                     <?php foreach($val['child'] AS $v):?>

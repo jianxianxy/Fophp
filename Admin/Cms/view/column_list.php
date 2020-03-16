@@ -15,13 +15,13 @@
 
 <section class="Hui-article-box">
 	<nav class="breadcrumb">
-        <i class="Hui-iconfont">&#xe67f;</i> 首页
+        <i class="layui-icon">&#xe68e;</i> 首页
 		<span class="c-gray en">&gt;</span>资讯管理
 		<span class="c-gray en">&gt;</span>资讯列表
 	</nav>
 	<div class="Hui-article">
 		<article class="cl pd-20">
-			<div>
+			<div style="height:30px;line-height:30px;">
 				<span class="select-box inline">
 				<select id="seasel" class="select">
 					<option value="0">全部栏目</option>
@@ -31,9 +31,9 @@
 				</select>
 				</span>
                 栏目关键字：<input type="text" name="name" style="width:100px;" placeholder="栏目名称" class="input-text">
-				<button class="btn btn-success" type="submit" id="search"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+				<button class="btn btn-success" type="submit" id="search"><i class="layui-icon">&#xe615;</i> 搜索</button>
                 <a class="btn btn-primary radius" data-title="添加资讯" _href="article-add.html" onclick="winAdd('添加栏目','/Cms/Column/Add')" href="javascript:;">
-                    <i class="Hui-iconfont">&#xe600;</i> 添加栏目
+                    <i class="layui-icon">&#xe654;</i> 添加栏目
                 </a>
 			</div>
 			<div class="mt-20">

@@ -56,7 +56,7 @@ class ModelAbstract extends Table{
             'on' => array('title'=>'启用','icon'=>'&#xe6e1;'),
             'off' => array('title'=>'禁用','icon'=>'&#xe6dd;'),
             'app' => array('title'=>'审核','icon'=>'&#xe603;'),
-            'del' => array('title'=>'删除','icon'=>'&#xe6e2;'),
+            'del' => array('title'=>'删除','icon'=>'&#xe640;'),
             'edit' => array('title'=>'编辑','icon'=>'&#xe6df;'),
             'view' => array('title'=>'预览','icon'=>'&#xe695;')
         );
@@ -67,7 +67,7 @@ class ModelAbstract extends Table{
             }
         }else{
             foreach($data AS $key => $val){
-                $ret .= '<a class="ml-5" onclick="'.$val.'" href="javascript:;" title="'.$tool[$key]['title'].'"><i class="Hui-iconfont">'.$tool[$key]['icon'].'</i></a>';
+                $ret .= '<a class="ml-5" onclick="'.$val.'" href="javascript:;" title="'.$tool[$key]['title'].'"><i class="layui-icon">'.$tool[$key]['icon'].'</i></a>';
             }
         }
         return $ret;
